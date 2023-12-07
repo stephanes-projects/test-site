@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bilinguismo na Infância</title>
+		<scrip src="./scripts/main.js"></scrip>
+		<link href="./styles/style.css" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Rubik+Bubbles&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<!-- HTML é case insensitive-->
+
+	<!--tag meta contém metadados - informações para o site, que não irão aparecer para o usuári->
+	
+<!-- Semântica no HTML: 
+	- Usar tags corretas nos locais corretos, para que todos que leiam o site consigam entender corretamente a mensagem (até mesmo deficientes visuais)
+
+		<b> x <strong>. 
+		- <b>: deixa texto em negrito. 
+		- <strong>: é uma tag semântica, serve para dar ênfase num elemento muito importante (ajuda nos leitores de texto), mas também deixa o texto em negrito.
+		
+		<i> x <em>:
+		- <i>: deixa texto em itálico
+		- <em>: utilizada para dar ênfase (ajuda nos leitores de texto), mas deixa os textos em itálico
+
+		<del> x <s>:
+		- <del>: semântica
+		- <s>: tag física
+
+	- Usar headings corretamente: necessário usá-los
+		de acordo com a hierarquia entre eles.
+		- São utilizados por buscadores do google e leitores de tela (para usuários com visual impairments). Há headings de H1-H6
+		- Os headings de maior hierarquia não precisam ser maiores que os demais, só devem estar corretos considerando a hierarquia de títulos e subtítulos      -->
+
+	<!-- Tags em bloco e inline:
+		- Tags em bloco:  como H
+			Apresentadas em bloco para o usuário. 
+			Blocos contém: conteúdo, padding (espaço que envolve o conteúdo), borda (margens do padding) e margem (margens mais externas)
+			Quando é adicionado um novo parágrado para elementos em bloco, ocorre a quebra de linha (e fica um espaçamento entre os dois parágrafos, pois o elemento contém espaçamentos invisíveis ao seu redor).
+		- Tags inline: como o p
+			Apresentadas em linha, e não podem conter tags em bloco aninhadas.
+
+		Com o CSS é possível personalizar os componentes de um elemento em bloco
+		É possível alterar o display de um elemento para ser um display em bloco (como foi feito para o elemento img no style.css)-->
+
+	<!--Aninhamento de tags: algumas tags podem conter outras. 
+		- Não  se pode aninhar elementos em bloco dentro de  elementos inline. Porém, podemos colocar elementos inline dentro de tags em bloco (como blockquote).
+		- Em <p> não se pode colocar tags em bloco, pois o texto deve ser fluido (in line).
+		- Várias tags podem ser aninhadas em p:
+			O texto html vem cru. Para tornar partes maiores, menores, negrito, itálico... utilizamos tags.
+			<sub> <sup> <small> <br> <q> <q> etc
+		OBS.: <blockquote>  é um elemento em bloco, que não pode vir dentro de <p>. Em <p> usaríamos o <q>, com  o atributo cite="". 
+	-->
+
+	<!--Toda tag html pode receber uma tag style, que recebe um CSS-->
+	<!-- rel: atributo que estabelece qual é a relação entre o  arquivo/URL linkado e o documento atual. Pode ser usado em <a>, <link>-->
+
+	<!-- Tags de container genéricos: não fazem nada e não tem significado semântico. Servem apenas para estilização.
+		- Span: container genérico inline
+		- Div: container genérico em bloco-->
+
+	<body>
+		<nav>
+			<ul id="menu">
+				<li><a id="inicio" href="./index.html">Início</a></li>
+				<li><a id="cursos" href="./cursos.html">Cursos</a></li>
+				<li><a id="sobre" href="./sobre.html">Sobre</a></li>
+				<li><a id="fale-conosco" href="./faleconosco.html">Fale conosco</a></li>
+			</ul>
+		</nav>
+
+		<h1 class="landingpage-headings" id="heading-1">Bilinguismo na Infância</h1>
+
+		<a class="link-imagem" href="https://www.cambly.com/kids" target="_blank">
+			<img
+				class="home-images"
+				id="home-image-1"
+				src="./images/bilingual-child.jpg"
+				alt="Criança falando Olá em vários idiomas"
+		/></a>
+
+		<p>
+			A educação bilíngue é um tema pouco falado, mas que é alvo de enorme interesse por parte de pais que querem
+			imigrar para outros países, ou mesmo que têm parentes residentes em países de língua estrangeira. <br />
+			Por isso decidimos abordar esse assunto, para servir de norte aos interessados.
+		</p>
+
+		<h2 class="landingpage-headings" id="heading-2">Como aplicar a educação bilíngue dentro de casa:</h2>
+		<p>A grande dúvida que paira sobre o tema é: <strong>como aplicá-la em casa?</strong></p>
+
+		<p>
+			Nesse caso, podemos iniciar falando sobre os <b>diferentes métodos</b> indicados para colocar em prática
+			esse planejamento:
+		</p>
+
+		<ul class="lista">
+			<li>OLOP (<i>one language, one parent</i>)</li>
+			<li>MLAT (<i>minority language at home</i>)</li>
+			<li>T&P (<i>time and place</i>)</li>
+			<li>MLP (<i>mixed languages policy</i>)</li>
+		</ul>
+
+		<p>
+			Se estiver se interessado, é importante se aprofundar no tema e conhecer mais afundo os
+			<a
+				href="https://bilingual-babies.com/from-opol-to-mlh-different-models-of-bilingual-living/"
+				target="_blank"
+			>
+				diferentes modelos de vivência bilíngue</a
+			>.
+		</p>
+		<hr />
+		<!--hr é uma tag em bloco-->
+		<p>Para saber sobre programas de imigração, visite nosso "fale conosco".</p>
+
+		<footer>
+			<q cite="https://www.edge.org/response-detail/27125">
+				<cite> You can never understand a language until you understand at least two </cite>
+			</q>
+			Geoffrey Willans
+		</footer>
+	</body>
+</html>
