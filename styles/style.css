@@ -1,60 +1,70 @@
-html {
-	font-size: 20px;
-	font-family: 'Open Sans', serif;
-}
-
 body {
-	width: 800px;
-	margin: 0 auto;
-	background-color: rgb(240, 221, 198);
-	padding: 0 20px 20px 20px;
-	border: 2px inset salmon;
+	font-family: "Open Sans", serif;
+	font-size: 100%;
+	line-height: 100%;
+	background-color: white;
+	margin: 0px;
 }
 
 #menu {
 	list-style: none;
 	margin: 0;
-	padding: 0;
-	border: 1px solid salmon;
-	background-color: #ededed;
+	padding: 1rem 2rem;
+	border-bottom: 0.25rem double white;
+	background-color: sandybrown;
 	display: flex;
-	height: 80px;
+	height: 50px;
 	justify-content: space-evenly;
 	align-items: center;
 }
 
 #inicio {
 	text-decoration: none;
+	color: white;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 #cursos {
 	text-decoration: none;
+	color: white;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 #sobre {
 	text-decoration: none;
+	color: white;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 #fale-conosco {
 	text-decoration: none;
+	color: white;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 h1 {
 	margin: 0;
 	padding: 20px 0 5px 0;
-	font-family: 'Rubik Bubbles', serif;
-	font-size: 30px;
+	font-family: "Open SAns", serif;
+	font-size: 2rem;
 	text-align: center;
-	color: rgb(48, 108, 238);
+	color: sandybrown;
+	font-weight: bold;
 	text-shadow: 1px 1px 1px grey;
 }
 
 h2 {
 	margin: 0;
 	padding: 10px 0;
-	font-family: 'Open Sans', serif;
-	font-size: 20px;
-	text-align: center;
+	font-family: "Open Sans", serif;
+	color: sandybrown;
+	font-weight: bold;
+	font-size: 1.5rem;
+	text-align: left;
 }
 
 p,
@@ -66,6 +76,6 @@ li {
 
 img {
 	display: block;
+	padding-top: 2rem;
 	margin: 0 auto;
-	border: 3px groove rgb(219, 126, 126);
 }

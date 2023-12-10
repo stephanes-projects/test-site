@@ -8,7 +8,10 @@
 		<link href="./styles/style.css" rel="stylesheet" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -67,65 +70,115 @@
 		- Span: container genérico inline
 		- Div: container genérico em bloco-->
 
+	<!-- Tags HTML de separação de conteúdos
+		- Header: para cabeçalhos
+		- Main: parte do texto que envolve o conteúdo principal
+
+	-->
+
+	<!-- Elementos de estrutura normalmente são do tipo box, e quebram linha-->
+
 	<body>
-		<nav>
-			<ul id="menu">
-				<li><a id="inicio" href="./index.html">Início</a></li>
-				<li><a id="cursos" href="./cursos.html">Cursos</a></li>
-				<li><a id="sobre" href="./sobre.html">Sobre</a></li>
-				<li><a id="fale-conosco" href="./faleconosco.html">Fale conosco</a></li>
-			</ul>
-		</nav>
+		<header>
+			<nav>
+				<ul id="menu">
+					<li><a id="inicio" href="./index.html">Início</a></li>
+					<li><a id="cursos" href="./cursos.html">Cursos</a></li>
+					<li><a id="sobre" href="./sobre.html">Sobre</a></li>
+					<li>
+						<a id="fale-conosco" href="./faleconosco.html"
+							>Fale conosco</a
+						>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-		<h1 class="landingpage-headings" id="heading-1">Bilinguismo na Infância</h1>
+		<main>
+			<section id="introdução">
+				<h1 class="landingpage-headings" id="heading-1">
+					Bilinguismo na Infância
+				</h1>
 
-		<a class="link-imagem" href="https://www.cambly.com/kids" target="_blank">
-			<img
-				class="home-images"
-				id="home-image-1"
-				src="./images/bilingual-child.jpg"
-				alt="Criança falando Olá em vários idiomas"
-		/></a>
+				<a
+					class="link-imagem"
+					href="https://www.cambly.com/kids"
+					target="_blank"
+				>
+					<img
+						class="home-images"
+						id="home-image-1"
+						src="./images/bilingual-child.jpg"
+						alt="Criança falando Olá em vários idiomas"
+				/></a>
 
-		<p>
-			A educação bilíngue é um tema pouco falado, mas que é alvo de enorme interesse por parte de pais que querem
-			imigrar para outros países, ou mesmo que têm parentes residentes em países de língua estrangeira. <br />
-			Por isso decidimos abordar esse assunto, para servir de norte aos interessados.
-		</p>
+				<p>
+					A educação bilíngue é um tema pouco falado, mas que é alvo
+					de enorme interesse por parte de pais que querem imigrar
+					para outros países, ou mesmo que têm parentes residentes em
+					países de língua estrangeira. <br />
+					Por isso decidimos abordar esse assunto, para servir de
+					norte aos interessados.
+				</p>
+			</section>
+			<section id="aplicação-tema">
+				<header>
+					<h2 class="landingpage-headings" id="heading-2">
+						Como aplicar a educação bilíngue dentro de casa:
+					</h2>
+				</header>
 
-		<h2 class="landingpage-headings" id="heading-2">Como aplicar a educação bilíngue dentro de casa:</h2>
-		<p>A grande dúvida que paira sobre o tema é: <strong>como aplicá-la em casa?</strong></p>
+				<p>
+					A grande dúvida que paira sobre o tema é:
+					<strong>como aplicá-la em casa?</strong>
+				</p>
 
-		<p>
-			Nesse caso, podemos iniciar falando sobre os <b>diferentes métodos</b> indicados para colocar em prática
-			esse planejamento:
-		</p>
+				<p>
+					Nesse caso, podemos iniciar falando sobre os
+					<b>diferentes métodos</b> indicados para colocar em prática
+					esse planejamento:
+				</p>
 
-		<ul class="lista">
-			<li>OLOP (<i>one language, one parent</i>)</li>
-			<li>MLAT (<i>minority language at home</i>)</li>
-			<li>T&P (<i>time and place</i>)</li>
-			<li>MLP (<i>mixed languages policy</i>)</li>
-		</ul>
+				<ul class="lista">
+					<li>OLOP (<i>one language, one parent</i>)</li>
+					<li>MLAT (<i>minority language at home</i>)</li>
+					<li>T&P (<i>time and place</i>)</li>
+					<li>MLP (<i>mixed languages policy</i>)</li>
+				</ul>
+			</section>
 
-		<p>
-			Se estiver se interessado, é importante se aprofundar no tema e conhecer mais afundo os
-			<a
-				href="https://bilingual-babies.com/from-opol-to-mlh-different-models-of-bilingual-living/"
-				target="_blank"
-			>
-				diferentes modelos de vivência bilíngue</a
-			>.
-		</p>
-		<hr />
-		<!--hr é uma tag em bloco-->
-		<p>Para saber sobre programas de imigração, visite nosso "fale conosco".</p>
-
-		<footer>
+			<p>
+				Se estiver se interessado, é importante se aprofundar no tema e
+				conhecer mais afundo os
+				<a
+					href="https://bilingual-babies.com/from-opol-to-mlh-different-models-of-bilingual-living/"
+					target="_blank"
+				>
+					diferentes modelos de vivência bilíngue</a
+				>.
+			</p>
+		</main>
+		<aside id="programas-imigração">
+			<p>
+				Para saber sobre programas de imigração, visite o
+				<a
+					href="https://www.ci.com.br/pt-br/imigracao-canada/imigrar-para-o-canada"
+					>site da CI intercâmbio</a
+				>.
+			</p>
+		</aside>
+		<blockquote>
 			<q cite="https://www.edge.org/response-detail/27125">
-				<cite> You can never understand a language until you understand at least two </cite>
+				<cite>
+					You can never understand a language until you understand at
+					least two
+				</cite>
 			</q>
 			Geoffrey Willans
-		</footer>
+		</blockquote>
+
+		<hr />
+		<!--hr é uma tag em bloco-->
+		<footer>Meu endereço</footer>
 	</body>
 </html>
