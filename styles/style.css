@@ -3,7 +3,6 @@ body {
 	font-size: 100%;
 	line-height: 100%;
 	background-color: white;
-	margin: 0px;
 }
 
 #menu {
@@ -16,6 +15,14 @@ body {
 	height: 50px;
 	justify-content: space-evenly;
 	align-items: center;
+}
+
+img {
+	display: block;
+	padding-top: 2rem;
+	margin: 0 auto;
+	height: 30rem;
+	width: 60%;
 }
 
 #inicio {
@@ -50,11 +57,10 @@ h1 {
 	margin: 0;
 	padding: 20px 0 5px 0;
 	font-family: "Open SAns", serif;
-	font-size: 2rem;
+	font-size: 2.5rem;
 	text-align: center;
 	color: sandybrown;
 	font-weight: bold;
-	text-shadow: 1px 1px 1px grey;
 }
 
 h2 {
@@ -74,8 +80,36 @@ li {
 	letter-spacing: 1px;
 }
 
-img {
-	display: block;
-	padding-top: 2rem;
-	margin: 0 auto;
+#mapa-endereço {
+	background-color: rgb(123, 123, 230);
+	width: 100%;
+	text-align: center;
+	border: 1px solid white;
+}
+
+iframe {
+	border-radius: 1rem;
+}
+
+blockquote {
+	text-align: left;
+}
+
+#footer {
+	background-color: sandybrown;
+	color: white;
+	list-style: none;
+	text-align: right;
+	height: fit-content;
+	display: grid;
+	gap: 0.2rem;
+}
+#inicio-footer,
+#cursos-footer,
+#sobre-footer,
+#fale-conosco-footer {
+	font-size: 1rem;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
 }
