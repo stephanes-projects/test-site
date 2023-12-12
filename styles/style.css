@@ -1,29 +1,51 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: "Open Sans", serif;
 	font-size: 100%;
 	line-height: 100%;
 	background-color: white;
+	margin: 0;
+}
+
+.conteúdo-página {
+	padding: 5rem;
 }
 
 #menu {
 	list-style: none;
+	width: 100%;
 	margin: 0;
-	padding: 1rem 2rem;
-	border-bottom: 0.25rem double white;
+	padding: 0;
+	/* padding: 10px 20px;*/
+	/*border-bottom: 0.25rem double white;*/
 	background-color: sandybrown;
 	display: flex;
-	height: 50px;
-	justify-content: space-evenly;
-	align-items: center;
 }
 
-img {
+#menu a {
+	display: block;
+	background-color: sandybrown;
+	height: 50px;
+	align-items: center;
+	padding: 10px 60px;
+	text-transform: uppercase;
+}
+
+#menu li a:hover {
+	text-decoration: underline solid white;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+/*img {
 	display: block;
 	padding-top: 2rem;
 	margin: 0 auto;
 	height: 30rem;
 	width: 60%;
-}
+}*/
 
 #inicio {
 	text-decoration: none;
@@ -53,13 +75,34 @@ img {
 	font-weight: bold;
 }
 
-h1 {
+.class-principal {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.class-principal::before {
+	content: "";
+	background-image: url(../images/bilinguismo.jpg);
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0px;
+	left: 0;
+	opacity: 0.75;
+}
+
+.class-principal h1 {
 	margin: 0;
-	padding: 20px 0 5px 0;
-	font-family: "Open SAns", serif;
-	font-size: 2.5rem;
+	padding: 12rem;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+		sans-serif;
+	font-size: 3rem;
 	text-align: center;
-	color: sandybrown;
+	color: black;
 	font-weight: bold;
 }
 
@@ -80,36 +123,55 @@ li {
 	letter-spacing: 1px;
 }
 
+.lista {
+	list-style: none;
+	color: black;
+}
+
+.lista a {
+	text-decoration: none;
+	color: black;
+}
+
+.lista a:hover {
+	text-decoration: underline solid black;
+}
+
 #mapa-endereço {
 	background-color: rgb(123, 123, 230);
-	width: 100%;
+	width: 0 auto;
 	text-align: center;
-	border: 1px solid white;
 }
 
 iframe {
 	border-radius: 1rem;
 }
 
-blockquote {
+.citação {
 	text-align: left;
+	margin-left: 0px;
 }
 
 #footer {
 	background-color: sandybrown;
-	color: white;
+	margin: 0px;
+	padding: 0px;
 	list-style: none;
 	text-align: right;
 	height: fit-content;
-	display: grid;
 	gap: 0.2rem;
 }
-#inicio-footer,
-#cursos-footer,
-#sobre-footer,
-#fale-conosco-footer {
+#footer li a {
+	display: block;
 	font-size: 1rem;
 	text-decoration: none;
 	color: white;
 	font-weight: bold;
+	cursor: pointer;
+}
+
+#footer li a:hover {
+	/*color: rgb(103, 103, 231);*/
+	text-decoration: underline solid white;
+	background-color: rgba(0, 0, 0, 0.2);
 }

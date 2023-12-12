@@ -1,0 +1,62 @@
+	<!-- HTML é case insensitive-->
+
+	<!--tag meta contém metadados - informações para o site, que não irão aparecer para o usuári->
+	
+<!-- Semântica no HTML: 
+	- Usar tags corretas nos locais corretos, para que todos que leiam o site consigam entender corretamente a mensagem (até mesmo deficientes visuais)
+
+		<b> x <strong>. 
+		- <b>: deixa texto em negrito. 
+		- <strong>: é uma tag semântica, serve para dar ênfase num elemento muito importante (ajuda nos leitores de texto), mas também deixa o texto em negrito.
+		
+		<i> x <em>:
+		- <i>: deixa texto em itálico
+		- <em>: utilizada para dar ênfase (ajuda nos leitores de texto), mas deixa os textos em itálico
+
+		<del> x <s>:
+		- <del>: semântica
+		- <s>: tag física
+
+	- Usar headings corretamente: necessário usá-los
+		de acordo com a hierarquia entre eles.
+		- São utilizados por buscadores do google e leitores de tela (para usuários com visual impairments). Há headings de H1-H6
+		- Os headings de maior hierarquia não precisam ser maiores que os demais, só devem estar corretos considerando a hierarquia de títulos e subtítulos      -->
+
+	<!-- Tags em bloco e inline:
+		- Tags em bloco:  como H
+			Apresentadas em bloco para o usuário. 
+			Blocos contém: conteúdo, padding (espaço que envolve o conteúdo), borda (margens do padding) e margem (margens mais externas)
+			Quando é adicionado um novo parágrado para elementos em bloco, ocorre a quebra de linha (e fica um espaçamento entre os dois parágrafos, pois o elemento contém espaçamentos invisíveis ao seu redor).
+		- Tags inline: como o p
+			Apresentadas em linha, e não podem conter tags em bloco aninhadas.
+
+		Com o CSS é possível personalizar os componentes de um elemento em bloco
+		É possível alterar o display de um elemento para ser um display em bloco (como foi feito para o elemento img no style.css)-->
+
+	<!--Aninhamento de tags: algumas tags podem conter outras. 
+		- Não  se pode aninhar elementos em bloco dentro de  elementos inline. Porém, podemos colocar elementos inline dentro de tags em bloco (como blockquote).
+		- Em <p> não se pode colocar tags em bloco, pois o texto deve ser fluido (in line).
+		- Várias tags podem ser aninhadas em p:
+			O texto html vem cru. Para tornar partes maiores, menores, negrito, itálico... utilizamos tags.
+			<sub> <sup> <small> <br> <q> <q> etc
+		OBS.: <blockquote>  é um elemento em bloco, que não pode vir dentro de <p>. Em <p> usaríamos o <q>, com  o atributo cite="". 
+	-->
+
+	<!--Toda tag html pode receber uma tag style, que recebe um CSS-->
+	<!-- rel: atributo que estabelece qual é a relação entre o  arquivo/URL linkado e o documento atual. Pode ser usado em <a>, <link>-->
+
+	<!-- Tags de container genéricos: não fazem nada e não tem significado semântico. Servem apenas para estilização.
+		- Span: container genérico inline
+		- Div: container genérico em bloco-->
+
+	<!-- Tags HTML de separação de conteúdos
+		- Header: para cabeçalhos
+		- Main: parte do texto que envolve o conteúdo principal
+
+	-->
+
+	<!-- Elementos de estrutura normalmente são do tipo box, e quebram linha-->
+	<!-- O seletor * seleciona todos os elementos da página
+	- Pading e margin: topo -> direita -> baixo -> esquerda (sentido horário)
+
+        -->

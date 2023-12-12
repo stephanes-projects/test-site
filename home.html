@@ -18,71 +18,95 @@
 			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Rubik+Bubbles&display=swap"
 			rel="stylesheet"
 		/>
-	</head>
-	<!-- HTML é case insensitive-->
 
-	<!--tag meta contém metadados - informações para o site, que não irão aparecer para o usuári->
-	
-<!-- Semântica no HTML: 
-	- Usar tags corretas nos locais corretos, para que todos que leiam o site consigam entender corretamente a mensagem (até mesmo deficientes visuais)
+		<!-- 
+		Box model: a maioria dos elementos html são representados por boxes retangulares
+			- Essas caixas contém (de fora para dentro): 
+				- margem: distância entre os limites da página e o conteúdo e sua borda. É transparente.
+					- Serve para empurrar um elemento de outro
+					- Se aumentar a margem, o conteúdo ficará mais distante do margin edge (limite da margem)
+					- A margem entre dois elementos não se somam (elas se sobrepõem). Caso as margens sejam do mesmo tamanho, elas se mantém iguais. Caso sejam diferentes, a distância entre os
+					dois elementos será igual à margem maior.
 
-		<b> x <strong>. 
-		- <b>: deixa texto em negrito. 
-		- <strong>: é uma tag semântica, serve para dar ênfase num elemento muito importante (ajuda nos leitores de texto), mas também deixa o texto em negrito.
+					- margin: cima, direita, baixo, esquerda (larguras)
+
+
+				- border: linha que demarca o fim do padding e início da margem.
+					OBS.: aumentar a largura da borda não diminui o padding. Elas não se sobrepõem.
+					- border: largura, style, color.
+					- box-sizing: border-box; (borda e margem passam a ficar dentro do limite do box. Se eu definir o width de 10px, e border de 5px, o total do box será de 10px, somando tudo)
+				
+				- padding: espaço ao redor do contéudo, enchimento da caixa
+					- Distância interna do conteúdo para a borda. 
+					- Aumentar o padding: faz com que haja uma maior distância entre o conteúdo e a borda do elemento.
+				
+					- padding: cima, direita, baixo, esquerda (larguras)
+				
+				- conteúdo
+
+			- É possível definir a altura e largura da área de conteúdo.
+				- Caso não sejam definidas, por padrão, o bloco irá ocupar toda a largura da tela, e sua altura será de acordo com o tamanho do conteúdo.
+
+		- Apenas elementos com display em block seguem o box model:
+			- Todos os elementos para separação de conteúdo têm display block
+			- Irão quebrar linha
+			- Se não for definida largura: ocupam toda a largura da tela
+
+			- Transformar um elemento com display inline em block:
+				- CSS display: block
+			
+
+
+		- Colocar imagem de fundo:
+			- background-image: url ()
+			- background-size: cover ()
+				- Faz com que a imagem se ajuste dentro da caixa
+			- background-position: center (pode ser outros alinhamentos)
+				- Alinha o centro da imagem no centro da caixa, considerando altura e largura
 		
-		<i> x <em>:
-		- <i>: deixa texto em itálico
-		- <em>: utilizada para dar ênfase (ajuda nos leitores de texto), mas deixa os textos em itálico
+		- Listas:
+			- ul e ol: recebem list itens (li)
+				- ul: unordered list
+				- ol: ordered list
+				- type: tipo de enumeração (1, A, I, start)
 
-		<del> x <s>:
-		- <del>: semântica
-		- <s>: tag física
+			- dl: description list (recebe descrição de um termo).
+				- dt: termo
+				- dd: descrição
 
-	- Usar headings corretamente: necessário usá-los
-		de acordo com a hierarquia entre eles.
-		- São utilizados por buscadores do google e leitores de tela (para usuários com visual impairments). Há headings de H1-H6
-		- Os headings de maior hierarquia não precisam ser maiores que os demais, só devem estar corretos considerando a hierarquia de títulos e subtítulos      -->
+			- <a>: <a> dentro de qualquer elemento: ele deve ser estilizado no CSS, não adianta estilizar o pai, pois o <a> já possui um estilo padrão, que se sobressai.
+				OBS.: para ser definidas margem e padding, é necessário alterar o display para block
 
-	<!-- Tags em bloco e inline:
-		- Tags em bloco:  como H
-			Apresentadas em bloco para o usuário. 
-			Blocos contém: conteúdo, padding (espaço que envolve o conteúdo), borda (margens do padding) e margem (margens mais externas)
-			Quando é adicionado um novo parágrado para elementos em bloco, ocorre a quebra de linha (e fica um espaçamento entre os dois parágrafos, pois o elemento contém espaçamentos invisíveis ao seu redor).
-		- Tags inline: como o p
-			Apresentadas em linha, e não podem conter tags em bloco aninhadas.
+			- Propriedades que podem ser alteradas:
+				background-color: ;
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+					- São as bolinhas/números...
+				text-align: ;
+				height: ;
+				gap: 0.2rem;
 
-		Com o CSS é possível personalizar os componentes de um elemento em bloco
-		É possível alterar o display de um elemento para ser um display em bloco (como foi feito para o elemento img no style.css)-->
+				- Lista na horizontal:
+				display: flex (itens ficam lado a lado, sem espaçamento entre eles)
+					- flex-direction: row (é o padrão, mas podemos usar column, column-reverse...)
+				justify-content: na horizontal
+				align-items: na vertical
+				width:
+				OBS.: o display padrão da lista é grid (elementos em coluna, quebrando linha).
+		
+		
 
-	<!--Aninhamento de tags: algumas tags podem conter outras. 
-		- Não  se pode aninhar elementos em bloco dentro de  elementos inline. Porém, podemos colocar elementos inline dentro de tags em bloco (como blockquote).
-		- Em <p> não se pode colocar tags em bloco, pois o texto deve ser fluido (in line).
-		- Várias tags podem ser aninhadas em p:
-			O texto html vem cru. Para tornar partes maiores, menores, negrito, itálico... utilizamos tags.
-			<sub> <sup> <small> <br> <q> <q> etc
-		OBS.: <blockquote>  é um elemento em bloco, que não pode vir dentro de <p>. Em <p> usaríamos o <q>, com  o atributo cite="". 
-	-->
 
-	<!--Toda tag html pode receber uma tag style, que recebe um CSS-->
-	<!-- rel: atributo que estabelece qual é a relação entre o  arquivo/URL linkado e o documento atual. Pode ser usado em <a>, <link>-->
 
-	<!-- Tags de container genéricos: não fazem nada e não tem significado semântico. Servem apenas para estilização.
-		- Span: container genérico inline
-		- Div: container genérico em bloco-->
-
-	<!-- Tags HTML de separação de conteúdos
-		- Header: para cabeçalhos
-		- Main: parte do texto que envolve o conteúdo principal
-
-	-->
-
-	<!-- Elementos de estrutura normalmente são do tipo box, e quebram linha-->
+	 -->
+	</head>
 
 	<body>
 		<header>
 			<nav>
 				<ul id="menu">
-					<li><a id="inicio" href="./index.html">Início</a></li>
+					<li><a id="inicio" href="./home.html">Início</a></li>
 					<li><a id="cursos" href="./cursos.html">Cursos</a></li>
 					<li><a id="sobre" href="./sobre.html">Sobre</a></li>
 					<li>
@@ -94,102 +118,216 @@
 			</nav>
 		</header>
 
-		<main>
-			<section id="introdução">
-				<a
-					class="link-imagem"
-					href="https://www.cambly.com/kids"
-					target="_blank"
-				>
-					<img
-						class="home-images"
-						id="home-image-1"
-						src="./images/bilinguismo.jpg"
-						alt="Mãos segurando bandeiras de várias nacionalidades"
-				/></a>
+		<div class="conteúdo-página">
+			<main>
+				<section id="introdução">
+					<div class="class-principal">
+						<h1 id="titulo-principal">Bilinguismo na Infância</h1>
+					</div>
 
-				<h1 class="landingpage-headings" id="heading-1">
-					Bilinguismo na Infância
-				</h1>
+					<p>
+						A educação bilíngue é um tema pouco falado, mas que é
+						alvo de enorme interesse por parte de pais que querem
+						imigrar para outros países, ou mesmo que têm parentes
+						residentes em países de língua estrangeira. <br />
+						Por isso decidimos abordar esse assunto, para servir de
+						norte aos interessados.
+					</p>
+				</section>
+				<section id="aplicação-tema">
+					<header>
+						<h2 class="landingpage-headings" id="heading-2">
+							Como aplicar a educação bilíngue dentro de casa:
+						</h2>
+					</header>
+
+					<p>
+						A grande dúvida que paira sobre o tema é:
+						<strong>como aplicá-la em casa?</strong>
+					</p>
+
+					<p>
+						Nesse caso, podemos iniciar falando sobre os
+						<b>diferentes métodos</b> indicados para colocar em
+						prática esse planejamento:
+					</p>
+
+					<ul class="lista">
+						<li>
+							<a href="#OLOP"
+								>OLOP (<i>one language, one parent</i>)</a
+							>
+						</li>
+						<li>
+							<a href="#MLAT">
+								MLAT (<i>minority language at home</i>)</a
+							>
+						</li>
+
+						<li>
+							<a href="#T&P">T&P (<i>time and place</i>)</a>
+						</li>
+						<li>
+							<a href="#MLP"
+								>MLP (<i>mixed languages policy</i>)</a
+							>
+						</li>
+					</ul>
+				</section>
 
 				<p>
-					A educação bilíngue é um tema pouco falado, mas que é alvo
-					de enorme interesse por parte de pais que querem imigrar
-					para outros países, ou mesmo que têm parentes residentes em
-					países de língua estrangeira. <br />
-					Por isso decidimos abordar esse assunto, para servir de
-					norte aos interessados.
+					Se estiver se interessado, é importante se aprofundar no
+					tema e conhecer mais afundo os
+					<a
+						href="https://bilingual-babies.com/from-opol-to-mlh-different-models-of-bilingual-living/"
+						target="_blank"
+					>
+						diferentes modelos de vivência bilíngue</a
+					>.
 				</p>
-			</section>
-			<section id="aplicação-tema">
-				<header>
-					<h2 class="landingpage-headings" id="heading-2">
-						Como aplicar a educação bilíngue dentro de casa:
-					</h2>
-				</header>
+				<p>Iremos agora abordar cada um deles separadamente.</p>
 
+				<section id="OLOP">
+					<header>
+						<h1>One Language, One Parent (OLOP)</h1>
+					</header>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Hic molestias fuga, aperiam perspiciatis eos
+						accusantium, facilis sint obcaecati necessitatibus fugit
+						ad iure aliquam incidunt officia repudiandae? Sit
+						consequatur natus iusto!
+					</p>
+
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Eveniet facere autem recusandae a amet consequatur,
+						consequuntur repellat sit fugit tempora vitae enim,
+						impedit voluptas cumque. Excepturi accusantium
+						dignissimos quia veniam.
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Eveniet facere autem recusandae a amet consequatur,
+						consequuntur repellat sit fugit tempora vitae enim,
+						impedit voluptas cumque. Excepturi accusantium
+						dignissimos quia veniam.
+					</p>
+				</section>
+
+				<section id="MLAT">
+					<header>
+						<h1>Minority Language at Home (MLAT)</h1>
+					</header>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Beatae saepe, vero facere consectetur possimus laborum
+						ratione recusandae, temporibus similique doloremque
+						necessitatibus hic corporis laudantium! Incidunt aperiam
+						velit qui veniam exercitationem!
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Beatae saepe, vero facere consectetur possimus laborum
+						ratione recusandae, temporibus similique doloremque
+						necessitatibus hic corporis laudantium! Incidunt aperiam
+						velit qui veniam exercitationem!
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Beatae saepe, vero facere consectetur possimus laborum
+						ratione recusandae, temporibus similique doloremque
+						necessitatibus hic corporis laudantium! Incidunt aperiam
+						velit qui veniam exercitationem!
+					</p>
+				</section>
+
+				<section id="T&P">
+					<header>
+						<h1>Time and Place (T&P)</h1>
+					</header>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Hic molestias fuga, aperiam perspiciatis eos
+						accusantium, facilis sint obcaecati necessitatibus fugit
+						ad iure aliquam incidunt officia repudiandae? Sit
+						consequatur natus iusto!
+					</p>
+
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Eveniet facere autem recusandae a amet consequatur,
+						consequuntur repellat sit fugit tempora vitae enim,
+						impedit voluptas cumque. Excepturi accusantium
+						dignissimos quia veniam.
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Eveniet facere autem recusandae a amet consequatur,
+						consequuntur repellat sit fugit tempora vitae enim,
+						impedit voluptas cumque. Excepturi accusantium
+						dignissimos quia veniam.
+					</p>
+				</section>
+
+				<section id="MLP">
+					<header>
+						<h1>Mixed Languages Policy (MLP)</h1>
+					</header>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Hic molestias fuga, aperiam perspiciatis eos
+						accusantium, facilis sint obcaecati necessitatibus fugit
+						ad iure aliquam incidunt officia repudiandae? Sit
+						consequatur natus iusto!
+					</p>
+
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Eveniet facere autem recusandae a amet consequatur,
+						consequuntur repellat sit fugit tempora vitae enim,
+						impedit voluptas cumque. Excepturi accusantium
+						dignissimos quia veniam.
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Eveniet facere autem recusandae a amet consequatur,
+						consequuntur repellat sit fugit tempora vitae enim,
+						impedit voluptas cumque. Excepturi accusantium
+						dignissimos quia veniam.
+					</p>
+				</section>
+			</main>
+			<aside id="programas-imigração">
 				<p>
-					A grande dúvida que paira sobre o tema é:
-					<strong>como aplicá-la em casa?</strong>
+					Para saber sobre programas de imigração, visite o
+					<a
+						href="https://www.ci.com.br/pt-br/imigracao-canada/imigrar-para-o-canada"
+						>site da CI intercâmbio</a
+					>.
 				</p>
 
-				<p>
-					Nesse caso, podemos iniciar falando sobre os
-					<b>diferentes métodos</b> indicados para colocar em prática
-					esse planejamento:
-				</p>
+				<section id="mapa-endereço">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d932.4265250306785!2d-48.11834930091185!3d-15.804236333467538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcdc6226393b5%3A0x16307a67452afe9d!2sPanificadora%20Fratelli!5e0!3m2!1spt-BR!2sbr!4v1702235958527!5m2!1spt-BR!2sbr"
+						width="600"
+						height="450"
+						style="border: 0"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</section>
+			</aside>
 
-				<ul class="lista">
-					<li>OLOP (<i>one language, one parent</i>)</li>
-					<li>MLAT (<i>minority language at home</i>)</li>
-					<li>T&P (<i>time and place</i>)</li>
-					<li>MLP (<i>mixed languages policy</i>)</li>
-				</ul>
-			</section>
+			<br />
+			<br />
 
-			<p>
-				Se estiver se interessado, é importante se aprofundar no tema e
-				conhecer mais afundo os
-				<a
-					href="https://bilingual-babies.com/from-opol-to-mlh-different-models-of-bilingual-living/"
-					target="_blank"
-				>
-					diferentes modelos de vivência bilíngue</a
-				>.
-			</p>
-		</main>
-		<aside id="programas-imigração">
-			<p>
-				Para saber sobre programas de imigração, visite o
-				<a
-					href="https://www.ci.com.br/pt-br/imigracao-canada/imigrar-para-o-canada"
-					>site da CI intercâmbio</a
-				>.
-			</p>
-
-			<section id="mapa-endereço">
-				<iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d932.4265250306785!2d-48.11834930091185!3d-15.804236333467538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcdc6226393b5%3A0x16307a67452afe9d!2sPanificadora%20Fratelli!5e0!3m2!1spt-BR!2sbr!4v1702235958527!5m2!1spt-BR!2sbr"
-					width="600"
-					height="450"
-					style="border: 0"
-					allowfullscreen=""
-					loading="lazy"
-					referrerpolicy="no-referrer-when-downgrade"
-				></iframe>
-			</section>
-		</aside>
-
-		<br />
-		<blockquote>
-			<q cite="https://www.edge.org/response-detail/27125">
-				<cite>
-					You can never understand a language until you understand at
-					least two
-				</cite>
-			</q>
-			, Geoffrey Willans
-		</blockquote>
+			<div class="citação">
+				"You can never understand a language until you understand at
+				least two", Geoffrey Willans
+			</div>
+		</div>
 
 		<!--hr é uma tag em bloco-->
 		<footer>
@@ -198,10 +336,13 @@
 					<li>
 						<a id="inicio-footer" href="./index.html">Início</a>
 					</li>
+
 					<li>
 						<a id="cursos-footer" href="./cursos.html">Cursos</a>
 					</li>
+
 					<li><a id="sobre-footer" href="./sobre.html">Sobre</a></li>
+
 					<li>
 						<a id="fale-conosco-footer" href="./faleconosco.html"
 							>Fale conosco</a
