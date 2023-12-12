@@ -1,5 +1,6 @@
 html {
 	scroll-behavior: smooth;
+	margin: 0;
 }
 
 body {
@@ -11,7 +12,8 @@ body {
 }
 
 .conteúdo-página {
-	padding: 5rem;
+	padding: 0rem 5rem 2rem 5rem;
+	
 }
 
 #menu {
@@ -39,13 +41,6 @@ body {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
-/*img {
-	display: block;
-	padding-top: 2rem;
-	margin: 0 auto;
-	height: 30rem;
-	width: 60%;
-}*/
 
 #inicio {
 	text-decoration: none;
@@ -75,36 +70,27 @@ body {
 	font-weight: bold;
 }
 
-.class-principal {
-	position: relative;
-	height: 100vh;
+
+.banner{
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
 }
 
-.class-principal::before {
-	content: "";
-	background-image: url(../images/bilinguismo.jpg);
-	background-size: cover;
+.banner h1 {
 	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0px;
-	left: 0;
-	opacity: 0.75;
+	color: sandybrown;
+	font-weight: bold;
+	font-size: 50px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.class-principal h1 {
-	margin: 0;
-	padding: 12rem;
-	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-		sans-serif;
-	font-size: 3rem;
-	text-align: center;
-	color: black;
-	font-weight: bold;
+.banner img {
+	opacity: 0.5;
 }
+
+
 
 h2 {
 	margin: 0;
@@ -121,7 +107,9 @@ li {
 	font-size: 20px;
 	line-height: 2;
 	letter-spacing: 1px;
-}
+	text-align: justify;
+	}
+
 
 .lista {
 	list-style: none;
@@ -175,3 +163,4 @@ iframe {
 	text-decoration: underline solid white;
 	background-color: rgba(0, 0, 0, 0.2);
 }
+
