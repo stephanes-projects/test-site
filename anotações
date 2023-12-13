@@ -60,3 +60,79 @@
 	- Pading e margin: topo -> direita -> baixo -> esquerda (sentido horário)
 
         -->
+
+
+Box model: a maioria dos elementos html são representados por boxes retangulares
+	- Essas caixas contém (de fora para dentro): 
+	- margem: distância entre os limites da página e o conteúdo e sua borda. É transparente.
+		- Serve para empurrar um elemento de outro
+		- Se aumentar a margem, o conteúdo ficará mais distante do margin edge (limite da margem)
+		- A margem entre dois elementos não se somam (elas se sobrepõem). Caso as margens sejam do mesmo tamanho, elas se mantém iguais. Caso sejam diferentes, a distância entre os
+		dois elementos será igual à margem maior.
+
+		- margin: cima, direita, baixo, esquerda (larguras)
+
+
+		- border: linha que demarca o fim do padding e início da margem.
+			OBS.: aumentar a largura da borda não diminui o padding. Elas não se sobrepõem.
+			- border: largura, style, color.
+			- box-sizing: border-box; (borda e margem passam a ficar dentro do limite do box. Se eu definir o width de 10px, e border de 5px, o total do box será de 10px, somando tudo)
+				
+		- padding: espaço ao redor do contéudo, enchimento da caixa
+			- Distância interna do conteúdo para a borda. 
+			- Aumentar o padding: faz com que haja uma maior distância entre o conteúdo e a borda do elemento.
+				
+			- padding: cima, direita, baixo, esquerda (larguras)
+				
+		- conteúdo
+			- É possível definir a altura e largura da área de conteúdo.
+				- Caso não sejam definidas, por padrão, o bloco irá ocupar toda a largura da tela, e sua altura será de acordo com o tamanho do conteúdo.
+
+		- Elementos com display em block seguem o box model:
+			- Todos os elementos para separação de conteúdo têm display block
+			- Irão quebrar linha
+			- Se não for definida largura: ocupam toda a largura da tela
+
+			- Transformar um elemento com display inline em block:
+				- CSS display: block
+			
+
+
+		- Colocar imagem de fundo:
+			- background-image: url ()
+			- background-size: cover ()
+				- Faz com que a imagem se ajuste dentro da caixa
+			- background-position: center (pode ser outros alinhamentos)
+				- Alinha o centro da imagem no centro da caixa, considerando altura e largura
+		
+		- Listas:
+			- ul e ol: recebem list itens (li)
+				- ul: unordered list
+				- ol: ordered list
+				- type: tipo de enumeração (1, A, I, start)
+
+			- dl: description list (recebe descrição de um termo).
+				- dt: termo
+				- dd: descrição
+
+			- <a>: <a> dentro de qualquer elemento: ele deve ser estilizado no CSS, não adianta estilizar o pai, pois o <a> já possui um estilo padrão, que se sobressai.
+				OBS.: para ser definidas margem e padding, é necessário alterar o display para block
+
+			- Propriedades que podem ser alteradas:
+				background-color: ;
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+					- São as bolinhas/números...
+				text-align: ;
+				height: ;
+				gap: 0.2rem;
+
+				- Lista na horizontal:
+				display: flex (itens ficam lado a lado, sem espaçamento entre eles)
+					- flex-direction: row (é o padrão, mas podemos usar column, column-reverse...)
+				justify-content: na horizontal
+				align-items: na vertical
+				width:
+				OBS.: o display padrão da lista é grid (elementos em coluna, quebrando linha).
+		

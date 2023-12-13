@@ -19,87 +19,73 @@
 			rel="stylesheet"
 		/>
 
-		<!-- 
-		Box model: a maioria dos elementos html são representados por boxes retangulares
-			- Essas caixas contém (de fora para dentro): 
-				- margem: distância entre os limites da página e o conteúdo e sua borda. É transparente.
-					- Serve para empurrar um elemento de outro
-					- Se aumentar a margem, o conteúdo ficará mais distante do margin edge (limite da margem)
-					- A margem entre dois elementos não se somam (elas se sobrepõem). Caso as margens sejam do mesmo tamanho, elas se mantém iguais. Caso sejam diferentes, a distância entre os
-					dois elementos será igual à margem maior.
-
-					- margin: cima, direita, baixo, esquerda (larguras)
-
-
-				- border: linha que demarca o fim do padding e início da margem.
-					OBS.: aumentar a largura da borda não diminui o padding. Elas não se sobrepõem.
-					- border: largura, style, color.
-					- box-sizing: border-box; (borda e margem passam a ficar dentro do limite do box. Se eu definir o width de 10px, e border de 5px, o total do box será de 10px, somando tudo)
-				
-				- padding: espaço ao redor do contéudo, enchimento da caixa
-					- Distância interna do conteúdo para a borda. 
-					- Aumentar o padding: faz com que haja uma maior distância entre o conteúdo e a borda do elemento.
-				
-					- padding: cima, direita, baixo, esquerda (larguras)
-				
-				- conteúdo
-
-			- É possível definir a altura e largura da área de conteúdo.
-				- Caso não sejam definidas, por padrão, o bloco irá ocupar toda a largura da tela, e sua altura será de acordo com o tamanho do conteúdo.
-
-		- Apenas elementos com display em block seguem o box model:
-			- Todos os elementos para separação de conteúdo têm display block
-			- Irão quebrar linha
-			- Se não for definida largura: ocupam toda a largura da tela
-
-			- Transformar um elemento com display inline em block:
-				- CSS display: block
-			
-
-
-		- Colocar imagem de fundo:
-			- background-image: url ()
-			- background-size: cover ()
-				- Faz com que a imagem se ajuste dentro da caixa
-			- background-position: center (pode ser outros alinhamentos)
-				- Alinha o centro da imagem no centro da caixa, considerando altura e largura
+		<!-- Tabelas
+			- Elemento table
+			- É composta por:
+				 <table> 
+					<thead> (Vai abrigar os títulos das linhas e colunas)
+						<tr> 
+							<th> Título de uma coluna
+					
+				<tbody> (Vai abrigar o conteúdo da tabela)
+					<tr>
+						<td> Conteúdo do corpo
+						- Deve-se colocar a mesma quantidade de td que de th (salvo quando se quer que um conteúdo seja disposto para +1 coluna)
 		
-		- Listas:
-			- ul e ol: recebem list itens (li)
-				- ul: unordered list
-				- ol: ordered list
-				- type: tipo de enumeração (1, A, I, start)
+				<tfoot> (Vai abrigar o rodapé da tabela - por exemplo o total de uma conta)
+					<tr>
+						<td>
 
-			- dl: description list (recebe descrição de um termo).
-				- dt: termo
-				- dd: descrição
-
-			- <a>: <a> dentro de qualquer elemento: ele deve ser estilizado no CSS, não adianta estilizar o pai, pois o <a> já possui um estilo padrão, que se sobressai.
-				OBS.: para ser definidas margem e padding, é necessário alterar o display para block
-
-			- Propriedades que podem ser alteradas:
-				background-color: ;
-				margin: 0px;
-				padding: 0px;
-				list-style: none;
-					- São as bolinhas/números...
-				text-align: ;
-				height: ;
-				gap: 0.2rem;
-
-				- Lista na horizontal:
-				display: flex (itens ficam lado a lado, sem espaçamento entre eles)
-					- flex-direction: row (é o padrão, mas podemos usar column, column-reverse...)
-				justify-content: na horizontal
-				align-items: na vertical
-				width:
-				OBS.: o display padrão da lista é grid (elementos em coluna, quebrando linha).
-		
+			- Colocar o conteúdo de uma linha para mais de uma coluna:
+				- Usar o atributo colspan ="" para definir o número de coluna que uma linha deverá ocupar.
 		
 
+			- Tabelas em telas pequenas:
+				- Podem não caber na tela de um celular. Para resolver, podemos colocar a tabela numa div, setar max-dith 100% e colocar overflow auto (que vai criar um scroll na própria div)
+		
+			-->
 
+		<style>
+			table {
+				border-collapse: collapse; /* Junta as bordas da tabela*/
+				font-family: sans-serif;
+				width: 800px;
+				padding: 0;
+				margin: 50px auto;
+			}
 
-	 -->
+			thead td,
+			tbody td,
+			table th {
+				border: 1px solid #ccc;
+				padding: 5px;
+				text-align: center;
+			}
+
+			table caption {
+				caption-side: bottom;
+				font-size: 14px;
+				text-align: left;
+				font-style: italic;
+				margin: 10px 0;
+			}
+
+			tfoot td,
+			table th {
+				background-color: #ddd;
+				font-weight: bold;
+				text-align: center;
+			}
+
+			tfoot {
+				font-style: italic;
+			}
+
+			.table {
+				max-width: 100%;
+				overflow: auto;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -110,43 +96,35 @@
 					<li><a id="cursos" href="./cursos.html">Cursos</a></li>
 					<li><a id="sobre" href="./sobre.html">Sobre</a></li>
 					<li>
-						<a id="fale-conosco" href="./faleconosco.html"
-							>Fale conosco</a
-						>
+						<a id="fale-conosco" href="./faleconosco.html">Fale conosco</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
 
-		
-			<main>
-				<!-- <div class="titulo-pagina">
-					<h1>Bilinguismo na Infância</h1>
-				</div>
-						
-				<div class="imagem">
-					<img src="./images/bilinguismo.jpg" alt="Pessoas hasteando bandeiras de diferentes países">
-				</div> -->
+		<main>
+			<div class="banner">
+				<img
+					src="./images/bilinguismo.jpg"
+					alt="Pessoas hasteando bandeiras de diferentes países"
+				/>
+				<h1>Bilinguismo na Infância</h1>
+			</div>
 
-				<div class="banner">
-					<img src="./images/bilinguismo.jpg" alt="Pessoas hasteando bandeiras de diferentes países">
-					<h1>Bilinguismo na Infância</h1>
-				</div>
-						
-						
-		<div class="conteúdo-página">
+			<div class="conteúdo-página">
 				<section class="introdução">
-
 					<p>
-						A educação bilíngue é um tema pouco falado, mas que é
-						alvo de enorme interesse por parte de pais que querem
-						imigrar para outros países, ou mesmo que têm parentes
-						residentes em países de língua estrangeira. 
-						<br> <br>	Por isso decidimos abordar esse assunto, para servir de
-						norte aos interessados.
+						A educação bilíngue é um tema pouco falado, mas que é alvo de enorme
+						interesse por parte de pais que querem imigrar para outros países,
+						ou mesmo que têm parentes residentes em países de língua
+						estrangeira.
+						<br />
+						<br />
+						Por isso decidimos abordar esse assunto, para servir de norte aos
+						interessados.
 					</p>
 				</section>
-				
+
 				<section id="aplicação-tema">
 					<header>
 						<h2 class="landingpage-headings" id="heading-2">
@@ -161,36 +139,32 @@
 
 					<p>
 						Nesse caso, podemos iniciar falando sobre os
-						<b>diferentes métodos</b> indicados para colocar em
-						prática esse planejamento:
+						<b>diferentes métodos</b> indicados para colocar em prática esse
+						planejamento:
 					</p>
 
 					<ul class="lista">
 						<li>
-							<a href="#OLOP"
-								>OLOP (<i>one language, one parent</i>)</a
-							>
+							<a href="#OLOP"> OLOP (<i>one language, one parent</i>)</a>
 						</li>
+
 						<li>
-							<a href="#MLAT">
-								MLAT (<i>minority language at home</i>)</a
-							>
+							<a href="#MLAT"> MLAT (<i>minority language at home</i>)</a>
 						</li>
 
 						<li>
 							<a href="#T&P">T&P (<i>time and place</i>)</a>
 						</li>
+
 						<li>
-							<a href="#MLP"
-								>MLP (<i>mixed languages policy</i>)</a
-							>
+							<a href="#MLP">MLP (<i>mixed languages policy</i>)</a>
 						</li>
 					</ul>
 				</section>
 
 				<p>
-					Se estiver se interessado, é importante se aprofundar no
-					tema e conhecer mais afundo os
+					Se estiver se interessado, é importante se aprofundar no tema e
+					conhecer mais afundo os
 					<a
 						href="https://bilingual-babies.com/from-opol-to-mlh-different-models-of-bilingual-living/"
 						target="_blank"
@@ -198,6 +172,7 @@
 						diferentes modelos de vivência bilíngue</a
 					>.
 				</p>
+
 				<p>Iremos agora abordar cada um deles separadamente.</p>
 
 				<section id="OLOP">
@@ -205,26 +180,24 @@
 						<h1>One Language, One Parent (OLOP)</h1>
 					</header>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Hic molestias fuga, aperiam perspiciatis eos
-						accusantium, facilis sint obcaecati necessitatibus fugit
-						ad iure aliquam incidunt officia repudiandae? Sit
-						consequatur natus iusto!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+						molestias fuga, aperiam perspiciatis eos accusantium, facilis sint
+						obcaecati necessitatibus fugit ad iure aliquam incidunt officia
+						repudiandae? Sit consequatur natus iusto!
 					</p>
 
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Eveniet facere autem recusandae a amet consequatur,
-						consequuntur repellat sit fugit tempora vitae enim,
-						impedit voluptas cumque. Excepturi accusantium
-						dignissimos quia veniam.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+						facere autem recusandae a amet consequatur, consequuntur repellat
+						sit fugit tempora vitae enim, impedit voluptas cumque. Excepturi
+						accusantium dignissimos quia veniam.
 					</p>
+
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Eveniet facere autem recusandae a amet consequatur,
-						consequuntur repellat sit fugit tempora vitae enim,
-						impedit voluptas cumque. Excepturi accusantium
-						dignissimos quia veniam.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+						facere autem recusandae a amet consequatur, consequuntur repellat
+						sit fugit tempora vitae enim, impedit voluptas cumque. Excepturi
+						accusantium dignissimos quia veniam.
 					</p>
 				</section>
 
@@ -233,25 +206,24 @@
 						<h1>Minority Language at Home (MLAT)</h1>
 					</header>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Beatae saepe, vero facere consectetur possimus laborum
-						ratione recusandae, temporibus similique doloremque
-						necessitatibus hic corporis laudantium! Incidunt aperiam
-						velit qui veniam exercitationem!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+						molestias fuga, aperiam perspiciatis eos accusantium, facilis sint
+						obcaecati necessitatibus fugit ad iure aliquam incidunt officia
+						repudiandae? Sit consequatur natus iusto!
 					</p>
+
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Beatae saepe, vero facere consectetur possimus laborum
-						ratione recusandae, temporibus similique doloremque
-						necessitatibus hic corporis laudantium! Incidunt aperiam
-						velit qui veniam exercitationem!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+						facere autem recusandae a amet consequatur, consequuntur repellat
+						sit fugit tempora vitae enim, impedit voluptas cumque. Excepturi
+						accusantium dignissimos quia veniam.
 					</p>
+
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Beatae saepe, vero facere consectetur possimus laborum
-						ratione recusandae, temporibus similique doloremque
-						necessitatibus hic corporis laudantium! Incidunt aperiam
-						velit qui veniam exercitationem!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+						facere autem recusandae a amet consequatur, consequuntur repellat
+						sit fugit tempora vitae enim, impedit voluptas cumque. Excepturi
+						accusantium dignissimos quia veniam.
 					</p>
 				</section>
 
@@ -259,27 +231,26 @@
 					<header>
 						<h1>Time and Place (T&P)</h1>
 					</header>
+
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Hic molestias fuga, aperiam perspiciatis eos
-						accusantium, facilis sint obcaecati necessitatibus fugit
-						ad iure aliquam incidunt officia repudiandae? Sit
-						consequatur natus iusto!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+						molestias fuga, aperiam perspiciatis eos accusantium, facilis sint
+						obcaecati necessitatibus fugit ad iure aliquam incidunt officia
+						repudiandae? Sit consequatur natus iusto!
 					</p>
 
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Eveniet facere autem recusandae a amet consequatur,
-						consequuntur repellat sit fugit tempora vitae enim,
-						impedit voluptas cumque. Excepturi accusantium
-						dignissimos quia veniam.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+						facere autem recusandae a amet consequatur, consequuntur repellat
+						sit fugit tempora vitae enim, impedit voluptas cumque. Excepturi
+						accusantium dignissimos quia veniam.
 					</p>
+
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Eveniet facere autem recusandae a amet consequatur,
-						consequuntur repellat sit fugit tempora vitae enim,
-						impedit voluptas cumque. Excepturi accusantium
-						dignissimos quia veniam.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+						facere autem recusandae a amet consequatur, consequuntur repellat
+						sit fugit tempora vitae enim, impedit voluptas cumque. Excepturi
+						accusantium dignissimos quia veniam.
 					</p>
 				</section>
 
@@ -287,64 +258,104 @@
 					<header>
 						<h1>Mixed Languages Policy (MLP)</h1>
 					</header>
+
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Hic molestias fuga, aperiam perspiciatis eos
-						accusantium, facilis sint obcaecati necessitatibus fugit
-						ad iure aliquam incidunt officia repudiandae? Sit
-						consequatur natus iusto!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+						molestias fuga, aperiam perspiciatis eos accusantium, facilis sint
+						obcaecati necessitatibus fugit ad iure aliquam incidunt officia
+						repudiandae? Sit consequatur natus iusto!
 					</p>
 
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Eveniet facere autem recusandae a amet consequatur,
-						consequuntur repellat sit fugit tempora vitae enim,
-						impedit voluptas cumque. Excepturi accusantium
-						dignissimos quia veniam.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+						facere autem recusandae a amet consequatur, consequuntur repellat
+						sit fugit tempora vitae enim, impedit voluptas cumque. Excepturi
+						accusantium dignissimos quia veniam.
 					</p>
+
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Eveniet facere autem recusandae a amet consequatur,
-						consequuntur repellat sit fugit tempora vitae enim,
-						impedit voluptas cumque. Excepturi accusantium
-						dignissimos quia veniam.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+						facere autem recusandae a amet consequatur, consequuntur repellat
+						sit fugit tempora vitae enim, impedit voluptas cumque. Excepturi
+						accusantium dignissimos quia veniam.
 					</p>
 				</section>
-			
-			<section id="programas-imigração">
-				<p>
-					Para saber sobre programas de imigração, visite o
-					<a
-						href="https://www.ci.com.br/pt-br/imigracao-canada/imigrar-para-o-canada"
-						>site da CI intercâmbio</a
-					>.
-				</p>
-			</section>
+
+				<section id="programas-imigração">
+					<p>
+						Para saber sobre programas de imigração, visite o
+						<a
+							href="https://www.ci.com.br/pt-br/imigracao-canada/imigrar-para-o-canada"
+							>site da CI intercâmbio</a
+						>.
+					</p>
+				</section>
+
+				<div class="citação">
+					"You can never understand a language until you understand at least
+					two", Geoffrey Willans
+				</div>
+
 				<section id="mapa-endereço">
 					<iframe
 						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d932.4265250306785!2d-48.11834930091185!3d-15.804236333467538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcdc6226393b5%3A0x16307a67452afe9d!2sPanificadora%20Fratelli!5e0!3m2!1spt-BR!2sbr!4v1702235958527!5m2!1spt-BR!2sbr"
 						width="600"
 						height="450"
-						style="border: 0"
-						allowfullscreen=""
+						style="border: 2px solid red"
+						allowfullscreen="true"
 						loading="lazy"
 						referrerpolicy="no-referrer-when-downgrade"
 					></iframe>
 				</section>
-
-				<div class="citação">
-					"You can never understand a language until you understand at
-					least two", Geoffrey Willans
-				</div>
-
 			</div>
-
-						
-		</div>
-	</div>
-</main>
+		</main>
 
 		<!--hr é uma tag em bloco-->
+		<div class="table">
+			<table>
+				<caption>
+					Valores necessários para a comprovação financeira para o visto.
+				</caption>
+				<thead>
+					<tr>
+						<th>Província</th>
+						<th>Estudante</th>
+						<th>1º membro</th>
+						<th>Membros adicionais</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>Ontário</td>
+						<td rowspan="2">$ 10.000</td>
+						<td rowspan="2">$ 4.000</td>
+						<td rowspan="2">$ 3.000</td>
+					</tr>
+					<tr>
+						<td>British Columbia</td>
+					</tr>
+					<tr>
+						<td>Quebec</td>
+						<td>$12.000</td>
+						<td>$6.000</td>
+						<td>$2.000</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td></td>
+						<td colspan="2" rowspan="2"></td>
+						<td>TOTAL:</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>R$ 150.000</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+
 		<footer>
 			<nav>
 				<ul id="footer">

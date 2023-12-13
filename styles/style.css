@@ -13,7 +13,6 @@ body {
 
 .conteúdo-página {
 	padding: 0rem 5rem 2rem 5rem;
-	
 }
 
 #menu {
@@ -40,7 +39,6 @@ body {
 	text-decoration: underline solid white;
 	background-color: rgba(0, 0, 0, 0.2);
 }
-
 
 #inicio {
 	text-decoration: none;
@@ -70,8 +68,7 @@ body {
 	font-weight: bold;
 }
 
-
-.banner{
+.banner {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -83,14 +80,12 @@ body {
 	color: sandybrown;
 	font-weight: bold;
 	font-size: 50px;
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .banner img {
 	opacity: 0.5;
 }
-
-
 
 h2 {
 	margin: 0;
@@ -108,8 +103,7 @@ li {
 	line-height: 2;
 	letter-spacing: 1px;
 	text-align: justify;
-	}
-
+}
 
 .lista {
 	list-style: none;
@@ -126,9 +120,10 @@ li {
 }
 
 #mapa-endereço {
-	background-color: rgb(123, 123, 230);
-	width: 0 auto;
-	text-align: center;
+	/* margin: 0 auto; */
+	display: flex;
+	justify-content: center;
+	margin: 0px;
 }
 
 iframe {
@@ -145,7 +140,6 @@ iframe {
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
-	text-align: right;
 	height: fit-content;
 	gap: 0.2rem;
 }
@@ -156,6 +150,7 @@ iframe {
 	color: white;
 	font-weight: bold;
 	cursor: pointer;
+	text-align: right;
 }
 
 #footer li a:hover {
@@ -163,4 +158,3 @@ iframe {
 	text-decoration: underline solid white;
 	background-color: rgba(0, 0, 0, 0.2);
 }
-
