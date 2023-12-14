@@ -19,71 +19,102 @@
 			rel="stylesheet"
 		/>
 
-		<!-- Tabelas
-			- Elemento table
-			- É composta por:
-				 <table> 
-					<thead> (Vai abrigar os títulos das linhas e colunas)
-						<tr> 
-							<th> Título de uma coluna
-					
-				<tbody> (Vai abrigar o conteúdo da tabela)
-					<tr>
-						<td> Conteúdo do corpo
-						- Deve-se colocar a mesma quantidade de td que de th (salvo quando se quer que um conteúdo seja disposto para +1 coluna)
-		
-				<tfoot> (Vai abrigar o rodapé da tabela - por exemplo o total de uma conta)
-					<tr>
-						<td>
+		<!-- 
+		- Formulários:
+			- Muito importantes, pois coletam dados do usuário que serão enviados para o backend e retornaraão uma resposta.
+			- Deve-se estrturar os formulários de forma semântica (pois isso ajuda pessoas com dificuldades visuais).
+			- Ocupa a largura toda da tela por padrão (display block, margin-top:0)
+			- Estrutura: podem ser usadas diversas tags
+				<form action="" method="" target="" autocomplete="">
+					- action: descreve para o navegador para onde que o formulário será enviado
+					- method: método do formulário. get é o padrão (campos do formulário são atrelados à URL com padrõa de URL). post também é comum.
+					- target: define onde um documento linkado será aberto
+						_blank	Opens the linked document in a new window or tab
+						_self	Opens the linked document in the same frame as it was clicked (this is default)** PADRÃO
+						_parent	Opens the linked document in the parent frame
+						_top	Opens the linked document in the full body of the window
+						framename
+					- autocomplete: esse atributo não é usado normalmente, mas pode ser para setar "off".
 
-			- Colocar o conteúdo de uma linha para mais de uma coluna:
-				- Usar o atributo colspan ="" para definir o número de coluna que uma linha deverá ocupar.
-		
+				<input>
+				<label>
 
-			- Tabelas em telas pequenas:
-				- Podem não caber na tela de um celular. Para resolver, podemos colocar a tabela numa div, setar max-dith 100% e colocar overflow auto (que vai criar um scroll na própria div)
+				<fieldset> agrupa campos relacionados do formulário. Ex.: campos de endereço, contato, etc.
+					<legend> legenda que identifica o fieldset
+
+				<h1-h6>
+				<p>
+				<section>
+			
+			OBS.: não se pode aninhar formulários em outros formulários
+
+
 		
+			
 			-->
 
 		<style>
-			table {
-				border-collapse: collapse; /* Junta as bordas da tabela*/
-				font-family: sans-serif;
-				width: 800px;
-				padding: 0;
-				margin: 50px auto;
+			#titulo-form {
+				display: flex;
+				background-color: rgba(244, 165, 96, 0.712);
+				border: 2px solid brown;
+				height: 150px;
+				width: 100%;
+				margin: 0 auto;
+				align-items: center;
+				justify-content: center;
 			}
 
-			thead td,
-			tbody td,
-			table th {
-				border: 1px solid #ccc;
-				padding: 5px;
-				text-align: center;
-			}
-
-			table caption {
-				caption-side: bottom;
-				font-size: 14px;
-				text-align: left;
-				font-style: italic;
-				margin: 10px 0;
-			}
-
-			tfoot td,
-			table th {
-				background-color: #ddd;
+			form h1 {
+				font-size: 20px;
+				color: black;
+				text-decoration: double;
 				font-weight: bold;
-				text-align: center;
 			}
 
-			tfoot {
-				font-style: italic;
+			form p {
+				line-height: 30px;
+				font-size: 20px;
+				margin: 0;
 			}
 
-			.table {
-				max-width: 100%;
-				overflow: auto;
+			label {
+				cursor: pointer;
+				display: block;
+				margin: 10px 0px;
+				font-weight: bold;
+				width: max-content;
+				font-size: 18px;
+
+				/* border: 1px solid black; */
+			}
+
+			input {
+				display: block;
+				margin: 5px 0px;
+				border: 0.5px solid brown;
+			}
+
+			.final-button {
+				margin: 0 10px 5px 0;
+				background-color: white;
+				border: 0.9px solid brown;
+				border-radius: 15%;
+			}
+
+			.formulario {
+				background-color: rgba(244, 164, 96, 0.5);
+				width: 50%;
+				margin: 50px auto;
+				padding: 20px;
+				border: 2px solid brown;
+			}
+
+			.IELTS {
+				display: flex;
+				gap: 10px;
+				margin: 0;
+				width: max-content;
 			}
 		</style>
 	</head>
@@ -354,6 +385,91 @@
 					</tr>
 				</tfoot>
 			</table>
+
+			<section class="formulario">
+				<form action="#" method="get" target="_self" autocomplete="off">
+					<div id="titulo-form">
+						<h1>Inscrição consultoria de imigração:</h1>
+					</div>
+					<p>
+						Preencha esse formulário para receber o contato de um de nossos
+						consultores!
+					</p>
+
+					<label for="nome">Nome:</label>
+					<input
+						type="text"
+						id="nome"
+						name="nome"
+						placeholder="Seu nome"
+						required
+					/>
+
+					<label for="idade">Sua idade:</label>
+					<input
+						type="number"
+						id="idade"
+						name="idade"
+						placeholder="Sua idade"
+						required
+					/>
+
+					<label>Já tenho IELT's:</label>
+					<div class="IELTS">
+						<label>
+							<input
+								class="IELTS"
+								type="radio"
+								id="sim"
+								name="ielts"
+								value="sim"
+								required
+							/>
+							Sim
+						</label>
+						<label>
+							<input
+								class="IELTS"
+								type="radio"
+								id="não"
+								name="ielts"
+								value="não"
+								checked
+								required
+							/>
+							Não
+						</label>
+
+						<label for="data">Data de realização do IELT's:</label>
+						<input type="date" id="data" name="data" />
+					</div>
+
+					<button class="final-button" type="reset">Reset</button>
+					<button class="final-button" type="submit">Enviar</button>
+
+					<!-- 
+						- Input:
+							- Atributo name: informa o nome do input - serve para identificar o tipo de dado fornecido pelo usuário para o servidor, para o backend.
+							- Atributo value: todo input terá um value, que é o valor fornecido pelo usuário. 
+								- O atributo value não é necessário para todos os tipos de input. 
+								- Ele pode servir para substituir o placeholder, indicando o tipo de dado a ser fornecido para o input.
+								- É usado em inputs que não são do type text ou number, porque nesse caso não seria inserido um value pelo usuário.
+							- disabled e readonly podem ser utilizados
+
+						- Label: pode envolver o input, ou pode ser colocado como irmão do input, mas aí deve-se usar o atributo "for" e referenciar o ID do input que o label irá se relacionar.
+						
+						- Inputs do type checkbox e radio:
+							- Caso se deseje que o usuário selecione uma dentre duas ou mais opções, deve-se colocar o mesmo valor para o atributo "name" de todos os inputs desejados.
+					
+							- Checked:
+								- Atributo usado em checkbox e radio que define que uma das opções já virá marcada.
+						
+						- Required: atributo que define que é necessário o preenchimento do input para que o formulário possa ser enviado.
+					-->
+
+					<!-- Botões de um formulário: type reset ou submit. Existem também outros tipos de botão -->
+				</form>
+			</section>
 		</div>
 
 		<footer>

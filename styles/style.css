@@ -11,24 +11,28 @@ body {
 	margin: 0;
 }
 
+h1,
+h2 {
+	line-height: 100%;
+}
+
 .conteúdo-página {
 	padding: 0rem 5rem 2rem 5rem;
 }
 
 #menu {
 	list-style: none;
-	width: 100%;
+	width: px;
 	margin: 0;
 	padding: 0;
 	/* padding: 10px 20px;*/
 	/*border-bottom: 0.25rem double white;*/
-	background-color: sandybrown;
 	display: flex;
+	background-color: black;
 }
 
 #menu a {
 	display: block;
-	background-color: sandybrown;
 	height: 50px;
 	align-items: center;
 	padding: 10px 60px;
@@ -36,8 +40,9 @@ body {
 }
 
 #menu li a:hover {
-	text-decoration: underline solid white;
-	background-color: rgba(0, 0, 0, 0.2);
+	/* text-decoration: underline solid white; */
+	color: sandybrown;
+	/* background-color: rgba(0, 0, 0, 0.2); */
 }
 
 #inicio {
@@ -135,8 +140,48 @@ iframe {
 	margin-left: 0px;
 }
 
+table {
+	border-collapse: collapse; /* Junta as bordas da tabela*/
+	font-family: sans-serif;
+	width: 800px;
+	padding: 0;
+	margin: 50px auto;
+}
+
+thead td,
+tbody td,
+table th {
+	border: 1px solid #ccc;
+	padding: 5px;
+	text-align: center;
+}
+
+table caption {
+	caption-side: bottom;
+	font-size: 14px;
+	text-align: left;
+	font-style: italic;
+	margin: 10px 0;
+}
+
+tfoot td,
+table th {
+	background-color: #ddd;
+	font-weight: bold;
+	text-align: center;
+}
+
+tfoot {
+	font-style: italic;
+}
+
+.table {
+	max-width: 100%;
+	overflow: auto;
+}
+
 #footer {
-	background-color: sandybrown;
+	background-color: black;
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
@@ -154,7 +199,7 @@ iframe {
 }
 
 #footer li a:hover {
-	/*color: rgb(103, 103, 231);*/
-	text-decoration: underline solid white;
+	color: sandybrown;
+	/* text-decoration: underline solid white; */
 	background-color: rgba(0, 0, 0, 0.2);
 }

@@ -136,3 +136,28 @@ Box model: a maioria dos elementos html são representados por boxes retangulare
 				width:
 				OBS.: o display padrão da lista é grid (elementos em coluna, quebrando linha).
 		
+		- Tabelas:
+				- Elemento table
+				- É composta por:
+					 <table> 
+						<thead> (Vai abrigar os títulos das linhas e colunas)
+							<tr> 
+								<th> Título de uma coluna
+						
+					<tbody> (Vai abrigar o conteúdo da tabela)
+						<tr>
+							<td> Conteúdo do corpo
+							- Deve-se colocar a mesma quantidade de td que de th (salvo quando se quer que um conteúdo seja disposto para +1 coluna)
+			
+					<tfoot> (Vai abrigar o rodapé da tabela - por exemplo o total de uma conta)
+						<tr>
+							<td>
+	
+				- Colocar o conteúdo de uma linha para mais de uma coluna:
+					- Usar o atributo colspan ="" para definir o número de coluna que uma linha deverá ocupar.
+			
+	
+				- Tabelas em telas pequenas:
+					- Podem não caber na tela de um celular. Para resolver, podemos colocar a tabela numa div, setar max-dith 100% e colocar overflow auto (que vai criar um scroll na própria div)
+			
+				
