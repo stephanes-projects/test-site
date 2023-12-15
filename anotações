@@ -159,5 +159,63 @@ Box model: a maioria dos elementos html são representados por boxes retangulare
 	
 				- Tabelas em telas pequenas:
 					- Podem não caber na tela de um celular. Para resolver, podemos colocar a tabela numa div, setar max-dith 100% e colocar overflow auto (que vai criar um scroll na própria div)
+
+			 
+		- Formulários:
+			- Muito importantes, pois coletam dados do usuário que serão enviados para o backend e retornaraão uma resposta.
+			- Deve-se estrturar os formulários de forma semântica (pois isso ajuda pessoas com dificuldades visuais).
+			- Ocupa a largura toda da tela por padrão (display block, margin-top:0)
+			
+			- Estrutura: <form action="" method="" target="" autocomplete="">
+				- Atributos:
+					- action: descreve para o navegador para onde que o formulário será enviado
+					- method: método do formulário. get é o padrão (campos do formulário são atrelados à URL com padrõa de URL). post também é comum.
+					- target: define onde um documento linkado será aberto
+						_blank	Opens the linked document in a new window or tab
+						_self	Opens the linked document in the same frame as it was clicked (this is default)** PADRÃO
+						_parent	Opens the linked document in the parent frame
+						_top	Opens the linked document in the full body of the window
+						framename
+					- autocomplete: esse atributo não é usado normalmente, mas pode ser para setar "off".
+				
+				- TAGS:
+					- Input:
+						- Atributo name: informa o nome do input - serve para identificar o tipo de dado fornecido pelo usuário para o servidor, para o backend.
+						- Atributo value: todo input terá um value, que é o valor fornecido pelo usuário. 
+							- O atributo value não é necessário para todos os tipos de input. 
+							- Ele pode servir para substituir o placeholder, indicando o tipo de dado a ser fornecido para o input.
+							- É usado em inputs que não são do type text ou number, porque nesse caso não seria inserido um value pelo usuário.
+							- disabled e readonly podem ser utilizados
+
+						- Required: atributo que define que é necessário o preenchimento do input para que o formulário possa ser enviado.
+					
+						- Inputs do type checkbox e radio:
+							- Caso se deseje que o usuário selecione uma dentre duas ou mais opções, deve-se colocar o mesmo valor para o atributo "name" de todos os inputs desejados.
+					
+							- Checked:
+								- Atributo usado em checkbox e radio que define que uma das opções já virá marcada.
+						
+						
+					- Label:
+						- Pode envolver o input, ou pode ser colocado como irmão do input, mas aí deve-se usar o atributo "for" e referenciar o ID do input que o label irá se relacionar.
+
+					- Button:
+						- Normalmente type= "reset" ou "submit". Existem também outros tipos de botão
+
+					- Fieldset:
+						- Agrupa campos relacionados do formulário. Ex.: campos de endereço, contato, etc.
+					
+						- Legend: legenda que identifica o fieldset
+
+					- H1-h6;
+					- P;
+					- Section;
+
+			
+				OBS.: não se pode aninhar formulários em outros formulários
+
+						
+						
+				
 			
 				

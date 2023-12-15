@@ -18,40 +18,7 @@
 			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Rubik+Bubbles&display=swap"
 			rel="stylesheet"
 		/>
-
-		<!-- 
-		- Formulários:
-			- Muito importantes, pois coletam dados do usuário que serão enviados para o backend e retornaraão uma resposta.
-			- Deve-se estrturar os formulários de forma semântica (pois isso ajuda pessoas com dificuldades visuais).
-			- Ocupa a largura toda da tela por padrão (display block, margin-top:0)
-			- Estrutura: podem ser usadas diversas tags
-				<form action="" method="" target="" autocomplete="">
-					- action: descreve para o navegador para onde que o formulário será enviado
-					- method: método do formulário. get é o padrão (campos do formulário são atrelados à URL com padrõa de URL). post também é comum.
-					- target: define onde um documento linkado será aberto
-						_blank	Opens the linked document in a new window or tab
-						_self	Opens the linked document in the same frame as it was clicked (this is default)** PADRÃO
-						_parent	Opens the linked document in the parent frame
-						_top	Opens the linked document in the full body of the window
-						framename
-					- autocomplete: esse atributo não é usado normalmente, mas pode ser para setar "off".
-
-				<input>
-				<label>
-
-				<fieldset> agrupa campos relacionados do formulário. Ex.: campos de endereço, contato, etc.
-					<legend> legenda que identifica o fieldset
-
-				<h1-h6>
-				<p>
-				<section>
-			
-			OBS.: não se pode aninhar formulários em outros formulários
-
-
-		
-			
-			-->
+		<!--  -->
 
 		<style>
 			#titulo-form {
@@ -120,15 +87,25 @@
 	</head>
 
 	<body>
-		<header>
-			<nav>
-				<ul id="menu">
+		<header class="header">
+			<div class="logo">
+				<a href="./home.html">
+					<img id="imagem-logo" src="images/letter.jfif" />
+				</a>
+			</div>
+			<nav id="menu-nav">
+				<ul id="botoes-menu">
 					<li><a id="inicio" href="./home.html">Início</a></li>
 					<li><a id="cursos" href="./cursos.html">Cursos</a></li>
 					<li><a id="sobre" href="./sobre.html">Sobre</a></li>
 					<li>
 						<a id="fale-conosco" href="./faleconosco.html">Fale conosco</a>
 					</li>
+					<div class="menu-button">
+						<form action="login.html">
+							<button id="login-button" type="submit">Entrar</button>
+						</form>
+					</div>
 				</ul>
 			</nav>
 		</header>
@@ -411,6 +388,19 @@
 						id="idade"
 						name="idade"
 						placeholder="Sua idade"
+						min="12"
+						,
+						max=""
+						step="none"
+						required
+					/>
+
+					<label for="email">Seu email:</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						placeholder="meuemail@gmail.com"
 						required
 					/>
 
@@ -439,35 +429,25 @@
 							/>
 							Não
 						</label>
-
-						<label for="data">Data de realização do IELT's:</label>
-						<input type="date" id="data" name="data" />
 					</div>
+
+					<label for="espelho-ielts">Foto do espelho IELTS:</label>
+					<input
+						type="file"
+						id="espelho-ielts"
+						name="resultado-ielts"
+						accept=".png,.svg,image/*"
+						multiple
+					/>
+
+					<label for="data">Data preferencial para o contato:</label>
+					<input type="datetime" id="data" name="data" />
+
+					<label for="hora">Horário preferencial para o contato:</label>
+					<input type="time" id="hora" name="hora" />
 
 					<button class="final-button" type="reset">Reset</button>
 					<button class="final-button" type="submit">Enviar</button>
-
-					<!-- 
-						- Input:
-							- Atributo name: informa o nome do input - serve para identificar o tipo de dado fornecido pelo usuário para o servidor, para o backend.
-							- Atributo value: todo input terá um value, que é o valor fornecido pelo usuário. 
-								- O atributo value não é necessário para todos os tipos de input. 
-								- Ele pode servir para substituir o placeholder, indicando o tipo de dado a ser fornecido para o input.
-								- É usado em inputs que não são do type text ou number, porque nesse caso não seria inserido um value pelo usuário.
-							- disabled e readonly podem ser utilizados
-
-						- Label: pode envolver o input, ou pode ser colocado como irmão do input, mas aí deve-se usar o atributo "for" e referenciar o ID do input que o label irá se relacionar.
-						
-						- Inputs do type checkbox e radio:
-							- Caso se deseje que o usuário selecione uma dentre duas ou mais opções, deve-se colocar o mesmo valor para o atributo "name" de todos os inputs desejados.
-					
-							- Checked:
-								- Atributo usado em checkbox e radio que define que uma das opções já virá marcada.
-						
-						- Required: atributo que define que é necessário o preenchimento do input para que o formulário possa ser enviado.
-					-->
-
-					<!-- Botões de um formulário: type reset ou submit. Existem também outros tipos de botão -->
 				</form>
 			</section>
 		</div>

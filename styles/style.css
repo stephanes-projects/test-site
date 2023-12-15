@@ -20,21 +20,41 @@ h2 {
 	padding: 0rem 5rem 2rem 5rem;
 }
 
-#menu {
-	list-style: none;
-	width: px;
-	margin: 0;
-	padding: 0;
-	/* padding: 10px 20px;*/
-	/*border-bottom: 0.25rem double white;*/
+.logo {
 	display: flex;
-	background-color: black;
+	height: 80px;
 }
 
-#menu a {
-	display: block;
-	height: 50px;
+#imagem-logo {
+	height: 100%;
+	width: 120px;
+}
+
+.header {
+	display: flex;
+	width: 100%;
+	background-color: black;
+	justify-content: space-between;
 	align-items: center;
+	padding-left: 30px;
+}
+
+#menu-nav {
+	width: 70%;
+	height: 80px;
+}
+
+#botoes-menu {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+#menu li a {
+	display: flex;
+	height: 50px;
+	cursor: pointer;
 	padding: 10px 60px;
 	text-transform: uppercase;
 }
@@ -43,6 +63,27 @@ h2 {
 	/* text-decoration: underline solid white; */
 	color: sandybrown;
 	/* background-color: rgba(0, 0, 0, 0.2); */
+}
+
+.menu-button {
+	display: flex;
+	justify-content: right;
+	align-items: center;
+}
+
+#login-button {
+	border-radius: 0.3rem;
+	background-color: white;
+
+	font-family: "Open Sans", serif;
+	font-weight: bold;
+	height: 40px;
+	width: 100px;
+}
+
+#login-button:hover {
+	border: 2px solid sandybrown;
+	cursor: pointer;
 }
 
 #inicio {
