@@ -23,6 +23,7 @@ h2 {
 .logo {
 	display: flex;
 	height: 80px;
+	padding-left: 20px;
 }
 
 #imagem-logo {
@@ -34,13 +35,13 @@ h2 {
 	display: flex;
 	width: 100%;
 	background-color: black;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
-	padding-left: 30px;
+	padding-left: 20px;
 }
 
 #menu-nav {
-	width: 70%;
+	width: 100%;
 	height: 80px;
 }
 
@@ -69,12 +70,12 @@ h2 {
 	display: flex;
 	justify-content: right;
 	align-items: center;
+	padding-right: 0px;
 }
 
 #login-button {
 	border-radius: 0.3rem;
 	background-color: white;
-
 	font-family: "Open Sans", serif;
 	font-weight: bold;
 	height: 40px;
@@ -243,4 +244,91 @@ tfoot {
 	color: sandybrown;
 	/* text-decoration: underline solid white; */
 	background-color: rgba(0, 0, 0, 0.2);
+}
+
+#titulo-form {
+	display: flex;
+	background-color: rgba(244, 165, 96, 0.712);
+	border: 2px solid brown;
+	height: 150px;
+	width: 100%;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: center;
+}
+
+form h1 {
+	font-size: 20px;
+	color: black;
+	text-decoration: double;
+	font-weight: bold;
+}
+
+form p {
+	line-height: 30px;
+	font-size: 20px;
+	margin: 0;
+}
+
+label {
+	cursor: pointer;
+	display: block;
+	margin: 10px 0px;
+	font-weight: bold;
+	width: max-content;
+	font-size: 18px;
+
+	/* border: 1px solid black; */
+}
+
+input {
+	display: block;
+	margin: 5px 0px;
+	border: 0.5px solid brown;
+}
+
+.final-button {
+	margin: 0 10px 5px 0;
+	background-color: white;
+	border: 0.9px solid brown;
+	border-radius: 15%;
+}
+
+.formulario {
+	background-color: rgba(244, 164, 96, 0.5);
+	width: 50%;
+	margin: 50px auto;
+	padding: 20px;
+	border: 2px solid brown;
+}
+
+.IELTS {
+	display: flex;
+	gap: 10px;
+	margin: 0;
+	width: max-content;
+}
+
+.menu-login,
+.menu-registre-se {
+	display: flex;
+	height: 80px;
+	padding-left: 20px;
+	background-color: black;
+	width: 100%;
+}
+
+.login,
+.registre-se {
+	background-color: rgba(0, 0, 0, 0.2);
+	width: 50%;
+	margin: 0 auto;
+}
+
+.titulo-login,
+.titulo-registre-se {
+	font-size: 40px;
+	text-align: center;
+	font-weight: bold;
+	padding-top: 20px;
 }
