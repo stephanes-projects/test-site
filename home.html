@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Bilinguismo na Infância</title>
 		<scrip src="./scripts/main.js"></scrip>
-		<link href="./styles/style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="./styles/style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -253,8 +253,8 @@
 		</main>
 
 		<!--hr é uma tag em bloco-->
-		<div class="table">
-			<table>
+		<div class="div-table">
+			<table class="table">
 				<caption>
 					Valores necessários para a comprovação financeira para o visto.
 				</caption>
@@ -308,13 +308,7 @@
 					</p>
 
 					<label for="nome">Nome:</label>
-					<input
-						type="text"
-						id="nome"
-						name="nome"
-						placeholder="Seu nome"
-						required
-					/>
+					<input type="text" id="nome" name="nome" placeholder="Seu nome" />
 
 					<label for="idade">Sua idade:</label>
 					<input
@@ -322,11 +316,8 @@
 						id="idade"
 						name="idade"
 						placeholder="Sua idade"
-						min="12"
-						,
 						max=""
 						step="none"
-						required
 					/>
 
 					<label for="email">Seu email:</label>
@@ -335,7 +326,6 @@
 						id="email"
 						name="email"
 						placeholder="meuemail@gmail.com"
-						required
 					/>
 
 					<label>Já tenho IELT's:</label>
@@ -347,7 +337,6 @@
 								id="sim"
 								name="ielts"
 								value="sim"
-								required
 							/>
 							Sim
 						</label>
@@ -359,7 +348,6 @@
 								name="ielts"
 								value="não"
 								checked
-								required
 							/>
 							Não
 						</label>
@@ -380,8 +368,58 @@
 					<label for="hora">Horário preferencial para o contato:</label>
 					<input type="time" id="hora" name="hora" />
 
-					<button class="final-button" type="reset">Reset</button>
-					<button class="final-button" type="submit">Enviar</button>
+					<label for="range">Seu interesse em imigrar:</label>
+					<input
+						type="range"
+						id="range"
+						name="range"
+						min="0"
+						max="10"
+						step="2"
+						list="lista"
+					/>
+
+					<datalist id="lista">
+						<option value="2" label="2"></option>
+						<option value="4"></option>
+						<option value="6" label="6"></option>
+						<option value="8"></option>
+						<option value="10" label="10"></option>
+					</datalist>
+					<!-- Datalist não funciona na maioria dos navegadores
+				 -->
+
+					<label for="provincia">Província de Interesse:</label>
+					<select id="provincia" name="provincia">
+						<option value="Alberta" label="Alberta"></option>
+						<option value="British-Columbia" label="British Columbia"></option>
+						<option value="Ontario" label="Ontario"></option>
+						<option value="Quebec" label="Quebec"></option>
+						<option value="Nenhuma" label="Ainda não decidi" selected></option>
+					</select>
+
+					<label for="texto-intencao"
+						>Escreva brevemente sobre o seu plano Canadá:</label
+					>
+					<textarea
+						name="relato"
+						id="relato"
+						placeholder="este é um breve resumo do meu planejamento"
+						rows="5"
+						cols="50"
+					></textarea>
+
+					<div class="div-botoes-finais">
+						<button class="botao-final" id="reset" type="reset">Reset</button>
+						<button
+							class="botao-final"
+							id="enviar"
+							type="submit"
+							onclick="mensagemValidacao()"
+						>
+							Enviar
+						</button>
+					</div>
 				</form>
 			</section>
 		</div>
@@ -407,5 +445,28 @@
 				</ul>
 			</nav>
 		</footer>
+
+		<script>
+			function mensagemValidacao() {
+				let nome = document.getElementById("nome");
+				let idade = document.getElementById("idade");
+
+				// declara função que dispara validação
+
+				// dentro da função valida os campos
+
+				if (!nome.value) {
+					alert("O nome não pode estar em branco");
+				}
+				if (!idade.value) {
+					alert("A idade não pode estar em branco");
+				}
+				if (idade.value < 12) {
+					alert("A idade não pode ser menor que 12");
+				} else {
+					alert("Formulário enviado com sucesso");
+				}
+			}
+		</script>
 	</body>
 </html>

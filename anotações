@@ -214,8 +214,16 @@ Box model: a maioria dos elementos html são representados por boxes retangulare
 			
 				OBS.: não se pode aninhar formulários em outros formulários
 
-						
+					- Select: cria um menu de opções que o usuário pode selecionar.
+						- Option: tag para criar as opções
+						- Optgroup: tag para criar diferentes grupos de opções dentro do select
 						
 				
-			
+			- Separando o CSS:
+				- Pode ser feito em arquivo separado, utilizando a tag style ou utilizando o atributo style.
+				- Prezar por utilizar classes como seletores CSS. Usar ID somente quando for preciso estilizar especificamente 1 elemento.
+				- Caso vá ser utilizado mais de um arquivo de CSS:
+					- O último link de CSS referenciado é a que é aplicada no navegador.
+
+				OBS.: é melhor ter apenas um arquivo de CSS, pois do contrário perde-se desempenho.
 				

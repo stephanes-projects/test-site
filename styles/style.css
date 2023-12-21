@@ -17,7 +17,7 @@ h2 {
 }
 
 .conteúdo-página {
-	padding: 0rem 5rem 2rem 5rem;
+	padding: 0rem 5rem 0rem 5rem;
 }
 
 .logo {
@@ -166,23 +166,23 @@ li {
 	text-decoration: underline solid black;
 }
 
+.citação {
+	text-align: left;
+	margin-left: 0px;
+}
+
 #mapa-endereço {
 	/* margin: 0 auto; */
 	display: flex;
 	justify-content: center;
-	margin: 0px;
+	margin: 50px 0px 50px 20px;
 }
 
 iframe {
 	border-radius: 1rem;
 }
 
-.citação {
-	text-align: left;
-	margin-left: 0px;
-}
-
-table {
+.table {
 	border-collapse: collapse; /* Junta as bordas da tabela*/
 	font-family: sans-serif;
 	width: 800px;
@@ -287,11 +287,19 @@ input {
 	border: 0.5px solid brown;
 }
 
-.final-button {
-	margin: 0 10px 5px 0;
-	background-color: white;
-	border: 0.9px solid brown;
+.div-botoes-finais {
+	display: flex;
+	margin: 10px 10px 5px 0;
+	gap: 5px;
+}
+
+.botao-final {
+	border: 1px solid brown;
 	border-radius: 15%;
+}
+
+.botao-final:hover {
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .formulario {
