@@ -69,9 +69,9 @@
 
 				<section id="aplicação-tema">
 					<header>
-						<h2 class="landingpage-headings" id="heading-2">
+						<h1 class="landingpage-headings" id="heading-2">
 							Como aplicar a educação bilíngue dentro de casa:
-						</h2>
+						</h1>
 					</header>
 
 					<p>
@@ -102,21 +102,20 @@
 							<a href="#MLP">MLP (<i>mixed languages policy</i>)</a>
 						</li>
 					</ul>
+
+					<p>
+						Se estiver se interessado, é importante se aprofundar no tema e
+						conhecer mais afundo os
+						<a
+							href="https://bilingual-babies.com/from-opol-to-mlh-different-models-of-bilingual-living/"
+							target="_blank"
+						>
+							diferentes modelos de vivência bilíngue</a
+						>.
+					</p>
+
+					<p>Iremos a seguir abordar cada um deles separadamente.</p>
 				</section>
-
-				<p>
-					Se estiver se interessado, é importante se aprofundar no tema e
-					conhecer mais afundo os
-					<a
-						href="https://bilingual-babies.com/from-opol-to-mlh-different-models-of-bilingual-living/"
-						target="_blank"
-					>
-						diferentes modelos de vivência bilíngue</a
-					>.
-				</p>
-
-				<p>Iremos agora abordar cada um deles separadamente.</p>
-
 				<section id="OLOP">
 					<header>
 						<h1>One Language, One Parent (OLOP)</h1>
@@ -308,7 +307,13 @@
 					</p>
 
 					<label for="nome">Nome:</label>
-					<input type="text" id="nome" name="nome" placeholder="Seu nome" />
+					<input
+						type="text"
+						id="nome"
+						name="nome"
+						placeholder="Seu nome"
+						onfocus="mudarBorda()"
+					/>
 
 					<label for="idade">Sua idade:</label>
 					<input
@@ -467,6 +472,13 @@
 					alert("Formulário enviado com sucesso");
 				}
 			}
+
+			// const inputNome = document.getElementById("nome");
+
+			// let style = document.createElement("style");
+			// style.type = "text/css";
+			// style.innerHTML = ".cssClass {border:  #0000ff}";
+			// document.getElementById("nome")
 		</script>
 	</body>
 </html>
