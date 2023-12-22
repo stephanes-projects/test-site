@@ -1,6 +1,10 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 html {
 	scroll-behavior: smooth;
-	margin: 0;
 }
 
 body {
@@ -9,11 +13,6 @@ body {
 	line-height: 100%;
 	background-color: white;
 	margin: 0;
-}
-
-h1,
-h2 {
-	line-height: 100%;
 }
 
 .conteúdo-página {
@@ -134,7 +133,12 @@ h2 {
 	opacity: 0.5;
 }
 
+h1,
 h2 {
+	line-height: 100%;
+}
+
+h1 {
 	margin: 0;
 	padding: 10px 0;
 	font-family: "Open Sans", serif;
@@ -144,17 +148,14 @@ h2 {
 	text-align: left;
 }
 
-p,
-li {
-	font-size: 20px;
-	line-height: 2;
-	letter-spacing: 1px;
-	text-align: justify;
+#aplicação-tema {
+	margin: 40px 0px 40px 0;
 }
 
 .lista {
-	list-style: none;
+	list-style: inside;
 	color: black;
+	padding: 10px 0px 10px 30px;
 }
 
 .lista a {
@@ -164,6 +165,32 @@ li {
 
 .lista a:hover {
 	text-decoration: underline solid black;
+}
+
+#OLOP {
+	margin: 40px 0px 40px 0;
+}
+
+#MLAT {
+	margin: 40px 0px 40px 0;
+}
+
+#MLP {
+	margin: 40px 0px 40px 0;
+}
+
+p,
+li {
+	font-size: 20px;
+	line-height: 2;
+	letter-spacing: 1px;
+	text-align: justify;
+	margin: 5px 0px 5px 0;
+}
+
+p + p,
+header + p {
+	text-indent: 1.5rem;
 }
 
 .citação {
