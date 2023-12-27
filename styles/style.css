@@ -188,10 +188,10 @@ li {
 	margin: 5px 0px 5px 0;
 }
 
-p + p,
+/* p + p,
 header + p {
 	text-indent: 1.5rem;
-}
+} */
 
 .citação {
 	text-align: left;
@@ -366,4 +366,78 @@ input {
 	text-align: center;
 	font-weight: bold;
 	padding-top: 20px;
+}
+
+/* Seletores básicos CSS:
+
+	- Seletor de descendentes:
+
+		- Pode ser selecionada um elemento específico que pertence a determinada classe:
+			- Ex.:	h1.menu-login {} - Nesse caso, apenas o elemento h1 da aclasse "menu-login" será selecionado.
+				HTML:
+				<body>
+					<div class="menu">
+						<h1 class="menu-login">Faça login!</h1>
+						<p class="menu-login">Não é cadastrado?Cadastre-se agora!</p>
+					</div>
+ 			- Nesse caso, apenas o elemento h1 da aclasse "menu-login" será selecionado.
+
+		- Herança de estilos em DIVs:
+			- A configuração padrão do navegador determina que div's filhas herdam a cor da div pai.
+				- color: inherit;
+				- Isso pode ser alterado no CSS, basta definir o estilo color: initial;
+			- Os filhos herdam
+		
+		.menus.menu-login {}
+			- Irá selecionar elementos que tenham essas duas classes, concomitantement, "menus" e "menu-login"
+
+		.menus .menu-login {}
+			- Irá selecionar elementos da classe "menu-login" que sejam filhas do elemento de classe "menu".
+		
+		- Child selector:
+			- Seletor direto de filhos específicos de um elemento. 
+			- Usado para selecionar apenas alguns dos filhos, e não todos.
+			Ex.:
+			HTML:
+			<div class="lista-1">
+		
+				<div class="item">
+					ITEM 1
+					<div class="explicacao">Explicacao</div>
+				</div>
+
+			<div class="item">
+				ITEM 2
+				<div class="explicacao">Explicacao</div>
+				</div>
+			</div>
+
+			CSS:
+			div {
+			color: initial;
+			}
+
+			.lista-1 > .item {
+			color: red;
+			}
+
+			- Nesse caso, apenas os elementos de classe "item" ficarão vermelhos.
+
+	- Seletores de irmãos:
+			- Adjacent sibling combinator:
+				.introdução h1+p {}
+				- Seleciona todos os <p> irmãos que são filhos de h1
+			
+			- General sibling selector:
+				.introdução h1~p {}
+				- Seleciona todos os elementos irmãos que vem depois de h1
+			
+*/
+
+div {
+	color: initial;
+}
+
+.lista-1 > .item {
+	color: red;
 }
