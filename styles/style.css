@@ -308,10 +308,22 @@ label {
 	/* border: 1px solid black; */
 }
 
-input {
+input,
+select,
+textarea {
 	display: block;
 	margin: 5px 0px;
-	border: 0.5px solid brown;
+	border: 0.5px solid black;
+	transition: all 300ms ease-in-out;
+}
+
+input:focus:not(.IELTS-input),
+select:focus,
+textarea:focus {
+	/* border: 2px solid blue; por que não aplica? */
+	background-color: rgb(194, 194, 194);
+	outline: none;
+	border: 0.5px solid blue;
 }
 
 .div-botoes-finais {
@@ -344,6 +356,29 @@ input {
 	width: max-content;
 }
 
+.IELTS-input {
+	border-radius: 50%;
+	background-color: white;
+	appearance: none;
+	width: 15px;
+	height: 15px;
+}
+
+.IELTS-input:checked {
+	border-radius: 50%;
+	border: 3px solid blue;
+	/* background-color: white; */
+}
+
+/* .IELTS-input:focus {
+	background-color: white;
+	border: 3px solid blue;
+} */
+
+/* .espelho-ielts1:not(.IELTS-input-sim:checked) {
+	background-color: black;
+} */
+
 .menu-login,
 .menu-registre-se {
 	display: flex;
@@ -366,6 +401,27 @@ input {
 	text-align: center;
 	font-weight: bold;
 	padding-top: 20px;
+}
+
+.link:link {
+	color: blue;
+}
+
+.link:visited {
+	color: purple;
+}
+
+.item::after {
+	content: " - ";
+}
+
+a:hover:not(.link, .link-footer)::after {
+	content: " * ";
+	color: red;
+}
+
+#footer li a:hover::before {
+	content: " -> ";
 }
 
 /* Seletores básicos CSS:
@@ -432,7 +488,97 @@ input {
 				.introdução h1~p {}
 				- Seleciona todos os elementos irmãos que vem depois de h1
 			
-*/
+
+	- Seletor de atributos:
+			[src] {}
+			- Pode ser selecionado apenas o atributo, e aí todos os atributos do HTML serão selecionados.
+			
+			[src=".test-site/images/imagem.png"] {}
+			- Pode ser selecionado o atributo e o seu valor. Nesse caso, o estilo só será aplicado caso o valor seja aquele em específico.
+				- Interessante quando se utiliza js para manipular a página.
+
+			[meu-atributo~="valor1"] {}
+			- Seleciona o atributo apenas para um valor específico que ele tenha, no caso de o atributo ter vários valores possíveis.
+				HTML
+				<h1 meu-atributo="valor1 valor2 valor3">
+
+			[meu-atributo|="valor1"] {}
+			- Seleciona apenas o primeiro atributo e que seja seguidos de -
+
+			[meu-atributo^="foto"] {}
+			- Seleciona atributos quando o valor começa com "foto"
+
+			[meu-atributo$="foto"] {}
+			- Seleciona atributos quando o valor termina com "foto".
+
+			[meu-atributo*="as"] {}
+			- Seleciona atributos quando o valor contém "as"
+
+
+	- Pseudoclasses:
+		- Refletem o estado de determinado elemento.
+
+		- Transition: all 10ms ease-in
+				- Define como ocorrerão as transcições entre estados.
+
+		- Pseudoclasses para links:
+			seletor:link {}
+				- Aplica um estilo, caso o link ainda não tenha sido aberto.
+
+			seletor:visited {}
+				- Aplica um estilo, caso o link já tenha sido aberto.
+			
+			seletor:active {}
+				- Aplica um estilo apenas durante a seleção do link
+
+		
+		seletor:hover {}
+		- Aplica estilo ao passar o mouse sobre o elemento.
+
+		seletor:focus {}
+		- Aplica estilo quando o elemento estiver selecionado
+		- Bastante utilizado para inputs.
+		- Inputs já vem com um outline padrão preto.
+		
+		seletor:first-child
+
+		seletor:last-child
+
+		seletor:required
+
+		seletor:not()
+		- Seleciona um elemento, exceto algum outro, que pode ser referenciado pela classe, ID ou tag.
+		Ex.:
+		input:hover:not(.inputName) {
+			background-color: red;
+
+
+		seletor:nth-child(even / odd / 5 / 3n / 3n+5)
+		- Seleciona um ou vários elementos irmãos específicos.
+		- Even: par
+		- Odd: ímpar
+		- índice específico: selecionar pelo numeral do índice do irmão.
+		- 3n/4n: seleciona de 3 em 3/4 em 4
+		- 3n+5: seleciona de 3 em 3 a partir do 5º elemento
+		
+	
+	- Pseudoelementos:
+		- seletor::before
+			- Pseudoelemento irá aparecer dentro do elemento selecionado, antes do seu conteúdo.
+		- seletor::after
+			- Pseudoelemento irá aparecer dentro do elemento selecionado, depois do seu conteúdo.
+
+
+
+
+	}
+
+
+		
+
+
+		
+		*/
 
 div {
 	color: initial;

@@ -105,6 +105,7 @@
 						Se estiver se interessado, é importante se aprofundar no tema e
 						conhecer mais afundo os
 						<a
+							class="link"
 							href="https://bilingual-babies.com/from-opol-to-mlh-different-models-of-bilingual-living/"
 							target="_blank"
 						>
@@ -218,7 +219,9 @@
 					<p>
 						Para saber sobre programas de imigração, visite o
 						<a
+							class="link"
 							href="https://www.ci.com.br/pt-br/imigracao-canada/imigrar-para-o-canada"
+							target="_blank"
 							>site da CI intercâmbio</a
 						>.
 					</p>
@@ -297,15 +300,17 @@
 						Preencha esse formulário para receber o contato de um de nossos
 						consultores!
 					</p>
-
-					<label for="nome">Nome:</label>
-					<input
-						type="text"
-						id="nome"
-						name="nome"
-						placeholder="Seu nome"
-						onfocus="mudarBorda()"
-					/>
+					<div class="nome-div">
+						<label for="nome" class="label-nome">Nome:</label>
+						<input
+							type="text"
+							id="nome"
+							name="nome"
+							placeholder="Seu nome"
+							onfocus="mudarBorda()"
+							required
+						/>
+					</div>
 
 					<label for="idade">Sua idade:</label>
 					<input
@@ -315,6 +320,7 @@
 						placeholder="Sua idade"
 						max=""
 						step="none"
+						required
 					/>
 
 					<label for="email">Seu email:</label>
@@ -323,13 +329,14 @@
 						id="email"
 						name="email"
 						placeholder="meuemail@gmail.com"
+						required
 					/>
 
 					<label>Já tenho IELT's:</label>
 					<div class="IELTS">
 						<label>
 							<input
-								class="IELTS"
+								class="IELTS-input"
 								type="radio"
 								id="sim"
 								name="ielts"
@@ -339,7 +346,7 @@
 						</label>
 						<label>
 							<input
-								class="IELTS"
+								class="IELTS-input"
 								type="radio"
 								id="não"
 								name="ielts"
@@ -352,6 +359,7 @@
 
 					<label for="espelho-ielts">Foto do espelho IELTS:</label>
 					<input
+						class="espelho-ielts1"
 						type="file"
 						id="espelho-ielts"
 						name="resultado-ielts"
@@ -360,10 +368,10 @@
 					/>
 
 					<label for="data">Data preferencial para o contato:</label>
-					<input type="datetime" id="data" name="data" />
+					<input type="datetime" id="data" name="data" required />
 
 					<label for="hora">Horário preferencial para o contato:</label>
-					<input type="time" id="hora" name="hora" />
+					<input type="time" id="hora" name="hora" required />
 
 					<label for="range">Seu interesse em imigrar:</label>
 					<input
@@ -437,17 +445,28 @@
 			<nav>
 				<ul id="footer">
 					<li>
-						<a id="inicio-footer" href="./index.html">Início</a>
+						<a class="link-footer" id="inicio-footer" href="./index.html"
+							>Início</a
+						>
 					</li>
 
 					<li>
-						<a id="cursos-footer" href="./cursos.html">Cursos</a>
+						<a class="link-footer" id="cursos-footer" href="./cursos.html"
+							>Cursos</a
+						>
 					</li>
 
-					<li><a id="sobre-footer" href="./sobre.html">Sobre</a></li>
+					<li>
+						<a class="link-footer" id="sobre-footer" href="./sobre.html"
+							>Sobre</a
+						>
+					</li>
 
 					<li>
-						<a id="fale-conosco-footer" href="./faleconosco.html"
+						<a
+							class="link-footer"
+							id="fale-conosco-footer"
+							href="./faleconosco.html"
 							>Fale conosco</a
 						>
 					</li>
