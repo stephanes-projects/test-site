@@ -1,10 +1,13 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
 	scroll-behavior: smooth;
+	height: 100%;
+	/* width: 100%; */
 }
 
 body {
@@ -13,10 +16,17 @@ body {
 	line-height: 100%;
 	background-color: white;
 	margin: 0;
+	height: 100%;
+	/* width: 100%; */
+	display: flex;
+	flex-direction: column;
+	align-items: right;
 }
 
 .conteúdo-página {
-	padding: 0rem 5rem 0rem 5rem;
+	padding: 0rem 5rem;
+	/* margin-bottom: 40px; */
+	min-height: 100vh;
 }
 
 .logo {
@@ -37,11 +47,12 @@ body {
 	justify-content: space-around;
 	align-items: center;
 	padding-left: 20px;
+	margin: 0;
 }
 
 #menu-nav {
 	width: 100%;
-	height: 80px;
+	height: max-content;
 }
 
 #botoes-menu {
@@ -245,17 +256,24 @@ tfoot {
 }
 
 .table {
-	max-width: 100%;
-	overflow: auto;
+	/* max-width: 100%;
+	overflow: auto; */
 }
 
 #footer {
 	background-color: black;
-	margin: 0px;
-	padding: 0px;
 	list-style: none;
-	height: fit-content;
-	gap: 0.2rem;
+	gap: 0rem;
+	padding-right: 1rem;
+	display: flex;
+	justify-content: right;
+	flex-direction: column;
+	/* display: flex;
+	justify-content: right;
+	flex-direction: column;
+	margin: 0;
+	width: 100%; */
+	/* bottom: 0; */
 }
 #footer li a {
 	display: block;
@@ -266,6 +284,7 @@ tfoot {
 	cursor: pointer;
 	text-align: right;
 }
+/* COmo resolver o posicionamento do footer??*/
 
 #footer li a:hover {
 	color: sandybrown;
@@ -278,7 +297,6 @@ tfoot {
 	background-color: rgba(244, 165, 96, 0.712);
 	border: 2px solid brown;
 	height: 150px;
-	width: 100%;
 	margin: 0 auto;
 	align-items: center;
 	justify-content: center;
@@ -328,13 +346,13 @@ textarea:focus {
 
 .div-botoes-finais {
 	display: flex;
-	margin: 10px 10px 5px 0;
 	gap: 5px;
 }
 
 .botao-final {
 	border: 1px solid brown;
 	border-radius: 15%;
+	padding: 8px;
 }
 
 .botao-final:hover {
@@ -343,7 +361,7 @@ textarea:focus {
 
 .formulario {
 	background-color: rgba(244, 164, 96, 0.5);
-	width: 50%;
+	max-width: 500px;
 	margin: 50px auto;
 	padding: 20px;
 	border: 2px solid brown;
@@ -415,7 +433,7 @@ textarea:focus {
 	content: " - ";
 }
 
-a:hover:not(.link, .link-footer)::after {
+a:hover:not(.link, .link-footer, .botoes-menu-sup)::after {
 	content: " * ";
 	color: red;
 }
@@ -424,7 +442,18 @@ a:hover:not(.link, .link-footer)::after {
 	content: " -> ";
 }
 
-/* Seletores básicos CSS:
+.introdução p::first-letter {
+	font-size: 50px;
+	color: sandybrown;
+	font-weight: bold;
+}
+
+p + p {
+	text-indent: 50px;
+}
+
+/* 
+- Seletores básicos CSS:
 
 	- Seletor de descendentes:
 
@@ -515,9 +544,8 @@ a:hover:not(.link, .link-footer)::after {
 			- Seleciona atributos quando o valor contém "as"
 
 
-	- Pseudoclasses:
-		- Refletem o estado de determinado elemento.
-
+	- Pseudoclasses: permitem a estilização de um elemento de acordo com o seu estado.
+		
 		- Transition: all 10ms ease-in
 				- Define como ocorrerão as transcições entre estados.
 
@@ -562,23 +590,70 @@ a:hover:not(.link, .link-footer)::after {
 		- 3n+5: seleciona de 3 em 3 a partir do 5º elemento
 		
 	
-	- Pseudoelementos:
+	- Pseudoelementos: permite a estilização de uma parte específica de um elemnto.
 		- seletor::before
 			- Pseudoelemento irá aparecer dentro do elemento selecionado, antes do seu conteúdo.
 		- seletor::after
 			- Pseudoelemento irá aparecer dentro do elemento selecionado, depois do seu conteúdo.
+		- seletor::first-line
+		- seletor::first-letter
+		- seletor::placeholder
 
 
 
+- Especificidade no CSS:
+	- ID, classes, atributos e pseudo-classes, elementos e pseudo-elementos
+	- Sempre a regra com a maior especificidade é aplicada, indepentemente da ordem em que foi escrita no css.
+	- Para regras de mesma especificidade, será aplicada a que foi escrita por último.
+	- Quantos mais seletores forem sendo adicionados, maior a especificidade, no geral. 
+		- Tem que ser verificado o resultado, para ver qual regra será aplicada.
+	- Atributo style é a que regra que tem maior especificidade (utilizada no próprio html).
+	- !important: se for escrita na frente da regra do css, ela será aplicada, independentemente da especificidade.
 
-	}
+
+OBS.: pode ser definida regra para seletor que tenha #ID & .classe ao mesmo tempo. Nesse caso, a especificidade é maior que apenas o ID.
+Ex.:
+	html
+		...
+		<section class="introdução"> 
+		<h1 class="introdução" id="titulo"> Como começa: </h1>
+		
+		</section>
+
+		#titulo {
+			background-color: red;
+		}
+
+		#titulo.introdução {
+			background-color: blue;
+		}
+	- Nesse caso, o background blue será aplicado, pois a especificidade é (1,1,0) -> 110
+	
+
+- Herança de propriedades:
+	- Algumas propriedades são passadas de pai para filho.
+	- Color, font-family, font-size, font-style... há uma lista das principais propriedades herdadas.
+	- Para desativar a herança e configurações padrões do navegador: definir a propriedade com o valor "initial".
+		Ex.: font-size: initial
 
 
+
+- Propriedades box-model:
+	- Elementos com display block podem ter altura e largura definidas, enquanto que
+	elementos com display inline, não pegam altura e largura.
+	Ex.: tag <p> tem o display padrão inline, enquanto <div> tem display block.
+	- Width
+		- Max-width
+		- Min-width
+	- Height
+		- Max-height
+		- Min-width
+	- Overflow: propriedade que define o que acontecerá quando o content exceder a altura ou largura da box em que está contido.
+	- 
 		
 
 
-		
-		*/
+*/
 
 div {
 	color: initial;

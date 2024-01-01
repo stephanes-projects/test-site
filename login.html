@@ -18,35 +18,84 @@
 			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Rubik+Bubbles&display=swap"
 			rel="stylesheet"
 		/>
+	</head>
 	<body>
 		<header class="menu-login">
 			<div class="logo">
-				<a href="./home.html">
+				<a class="botoes-menu-sup" href="./home.html">
 					<img id="imagem-logo" src="images/letter.jfif" />
 				</a>
 			</div>
 		</header>
+		<div class="conteúdo-página">
+			<div class="login">
+				<h1 class="titulo-login">Login</h1>
+				<h2>Entre na sua conta para acessar a área de membros.</h2>
+				<p>
+					Não tem cadastro?
+					<a href="registre-se.html">Registre-se!</a>
+				</p>
 
-		<div class="login">
-		<h1 class="titulo-login">Login</h1>
-		<h2>
-			Entre na sua conta para acessar a área de membros.</h2>
-		<p> Não tem cadastro? <a href="registre-se.html">Registre-se!</a>
-		
-		<form>
-			<label>
-				<input
-					type="email"
-					placeholder="seuemail@gmail.com"
-					id="email-login"
-					required
-			/></label>
+				<form>
+					<label>
+						<input
+							type="email"
+							placeholder="seuemail@gmail.com"
+							id="email-login"
+							required
+					/></label>
 
-			<label>
-				<input type="password" placeholder="senha" id="senha-login" />
-			</label>
-		</form>
-	</div>
+					<label>
+						<input
+							type="password"
+							placeholder="senha"
+							id="senha-login"
+						/>
+					</label>
+				</form>
+			</div>
+		</div>
 
+		<footer>
+			<nav>
+				<ul id="footer">
+					<li>
+						<a
+							class="link-footer"
+							id="inicio-footer"
+							href="./home.html"
+							>Início</a
+						>
+					</li>
+
+					<li>
+						<a
+							class="link-footer"
+							id="cursos-footer"
+							href="./cursos.html"
+							>Cursos</a
+						>
+					</li>
+
+					<li>
+						<a
+							class="link-footer"
+							id="sobre-footer"
+							href="./sobre.html"
+							>Sobre</a
+						>
+					</li>
+
+					<li>
+						<a
+							class="link-footer"
+							id="fale-conosco-footer"
+							href="./faleconosco.html"
+							>Fale conosco</a
+						>
+					</li>
+				</ul>
+			</nav>
+		</footer>
 	</body>
 </html>
