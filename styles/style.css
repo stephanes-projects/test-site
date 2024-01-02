@@ -7,6 +7,7 @@
 html {
 	scroll-behavior: smooth;
 	height: 100%;
+	display: flex;
 	/* width: 100%; */
 }
 
@@ -17,16 +18,18 @@ body {
 	background-color: white;
 	margin: 0;
 	height: 100%;
-	/* width: 100%; */
 	display: flex;
 	flex-direction: column;
 	align-items: right;
+	width: 100%;
 }
 
 .conteúdo-página {
+	/* box-sizing: content-box; */
 	padding: 0rem 5rem;
 	/* margin-bottom: 40px; */
 	min-height: 100vh;
+	width: 100%;
 }
 
 .logo {
@@ -255,11 +258,6 @@ tfoot {
 	font-style: italic;
 }
 
-.table {
-	/* max-width: 100%;
-	overflow: auto; */
-}
-
 #footer {
 	background-color: black;
 	list-style: none;
@@ -352,7 +350,7 @@ textarea:focus {
 .botao-final {
 	border: 1px solid brown;
 	border-radius: 15%;
-	padding: 8px;
+	padding: 5px;
 }
 
 .botao-final:hover {
@@ -649,8 +647,12 @@ Ex.:
 		- Max-height
 		- Min-width
 	- Overflow: propriedade que define o que acontecerá quando o content exceder a altura ou largura da box em que está contido.
-	- 
-		
+	- Box-sizing: border-box
+		- O tamanho do box irá incluir seu conteúdo, com altura, largura, altura e largura do padding e da borda.
+		- Margem não é incluída, sempre fica fora.
+	- Float: pode ser definida uma forma de organização horizontal para os boxes
+	OBS.: Margens e paddings de elementos em block (elementos de separação de conteúdo, por padrão), não são somadas, exceto se estiverem em float.
+
 
 
 */
@@ -659,6 +661,21 @@ div {
 	color: initial;
 }
 
-.lista-1 > .item {
-	color: red;
+.test-1 {
+	display: block;
+	background-color: yellow;
+	box-sizing: border-box;
+	max-width: 500px;
+	height: 400px;
+	margin: 0 auto 50px auto;
+	padding: 80px;
+}
+
+.test-2 {
+	background-color: aqua;
+	box-sizing: content-box;
+	max-width: 500px;
+	max-height: 200px;
+	padding: 80px;
+	margin: 50px auto;
 }
