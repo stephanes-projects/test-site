@@ -5,6 +5,7 @@
 }
 
 html {
+	font-size: 62.5%;
 	scroll-behavior: smooth;
 	height: 100%;
 	display: flex;
@@ -46,7 +47,7 @@ body {
 .header {
 	display: flex;
 	width: 100%;
-	background-color: black;
+	background-color: #000000;
 	justify-content: space-around;
 	align-items: center;
 	padding-left: 20px;
@@ -65,17 +66,16 @@ body {
 	justify-content: space-evenly;
 }
 
-#menu li a {
+/* #menu li a {
 	display: flex;
 	height: 50px;
 	cursor: pointer;
 	padding: 10px 60px;
-	text-transform: uppercase;
-}
+	text-transform: uppercase;} */
 
-#menu li a:hover {
+#menu-nav li a:hover {
 	/* text-decoration: underline solid white; */
-	color: sandybrown;
+	color: #b896b3;
 	/* background-color: rgba(0, 0, 0, 0.2); */
 }
 
@@ -96,35 +96,35 @@ body {
 }
 
 #login-button:hover {
-	border: 2px solid sandybrown;
+	border: 2px solid #b896b3;
 	cursor: pointer;
 }
 
 #inicio {
 	text-decoration: none;
 	color: white;
-	font-size: 1.5rem;
+	font-size: 2.5rem;
 	font-weight: bold;
 }
 
 #cursos {
 	text-decoration: none;
 	color: white;
-	font-size: 1.5rem;
+	font-size: 2.5rem;
 	font-weight: bold;
 }
 
 #sobre {
 	text-decoration: none;
 	color: white;
-	font-size: 1.5rem;
+	font-size: 2.5rem;
 	font-weight: bold;
 }
 
 #fale-conosco {
 	text-decoration: none;
 	color: white;
-	font-size: 1.5rem;
+	font-size: 2.5rem;
 	font-weight: bold;
 }
 
@@ -137,9 +137,9 @@ body {
 
 .banner h1 {
 	position: absolute;
-	color: sandybrown;
+	color: #12115d;
 	font-weight: bold;
-	font-size: 50px;
+	font-size: 5.5rem;
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
@@ -156,9 +156,9 @@ h1 {
 	margin: 0;
 	padding: 10px 0;
 	font-family: "Open Sans", serif;
-	color: sandybrown;
+	color: #12115d;
 	font-weight: bold;
-	font-size: 1.5rem;
+	font-size: 2.5rem;
 	text-align: left;
 }
 
@@ -234,7 +234,7 @@ iframe {
 thead td,
 tbody td,
 table th {
-	border: 1px solid #ccc;
+	border: 1px solid #b896b3;
 	padding: 5px;
 	text-align: center;
 }
@@ -249,7 +249,7 @@ table caption {
 
 tfoot td,
 table th {
-	background-color: #ddd;
+	background-color: #b896b3;
 	font-weight: bold;
 	text-align: center;
 }
@@ -285,15 +285,15 @@ tfoot {
 /* COmo resolver o posicionamento do footer??*/
 
 #footer li a:hover {
-	color: sandybrown;
+	color: #b896b3;
 	/* text-decoration: underline solid white; */
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
 #titulo-form {
 	display: flex;
-	background-color: rgba(244, 165, 96, 0.712);
-	border: 2px solid brown;
+	background-color: #000000ad;
+	border: 2px solid #000000;
 	height: 150px;
 	margin: 0 auto;
 	align-items: center;
@@ -302,7 +302,7 @@ tfoot {
 
 form h1 {
 	font-size: 20px;
-	color: black;
+	color: white;
 	text-decoration: double;
 	font-weight: bold;
 }
@@ -358,11 +358,11 @@ textarea:focus {
 }
 
 .formulario {
-	background-color: rgba(244, 164, 96, 0.5);
+	background-color: #12115d56;
 	max-width: 500px;
 	margin: 50px auto;
 	padding: 20px;
-	border: 2px solid brown;
+	border: 2px solid #000000;
 }
 
 .IELTS {
@@ -433,7 +433,7 @@ textarea:focus {
 
 a:hover:not(.link, .link-footer, .botoes-menu-sup)::after {
 	content: " * ";
-	color: red;
+	color: #f00;
 }
 
 #footer li a:hover::before {
@@ -653,6 +653,53 @@ Ex.:
 	- Float: pode ser definida uma forma de organização horizontal para os boxes
 	OBS.: Margens e paddings de elementos em block (elementos de separação de conteúdo, por padrão), não são somadas, exceto se estiverem em float.
 
+
+
+- Cores HTML: (color picker)
+	- Hexadecimal: ABCDEF12345678 (3 ou 6 letras - se os pares forem repetidos, pode ser colocada apenas 1 letra para cada par)
+		- 1º par de letras= vermelho
+		- 2º par de letras= verde
+		- 3º par de letras= azul
+
+	- RGB: 3 centenas
+		- Red, green e blue
+
+	- RGBA: 4 valores (R, G, B, Opacidade)
+
+	- HSL e HSLA
+
+
+- Unidades de medida:
+	- Unidades absolutas: px
+		- Não tem como o usuário alterar o tamanho da fonte utilizando as configurações do navegador, por exemplo.
+
+	- Unidades relativas: dependem de outra medida
+		- É interessante utilizar porque permite que o usuário altere o tamanho da visualização da página, e todos os elementos em medidas relativas, se ajustam.
+		
+		- em (0-10): elemento se comporta com base nas medidas do elemento PAI (mais próximo)
+			- 1em = 100% do tamanho do pai
+			- 0.5em = 50% do tamanho do pai
+
+		- rem: elemento se comporta com base no elemento root do documento (html)
+			- É mais utilizado atualmente
+		
+		- Como utilizar rem para equivaler a um valor específico de pixels:
+			- Definir font-size do html: 62.5% (o navegador já define por padrão o font-size em 16px, caso o font-size do html seja 100%).
+				- 62,5% de 16px, equivale a 10px. Então, o font-size do html passa a ser de 10px, e medidas seguintes de 1rem também.
+
+		- vw: 1% da largura do viewport - da tela (0-100%)
+		
+		
+
+
+
+	Long Live Charmaine Color Palette
+
+
+
+	
+		
+		
 
 
 */
