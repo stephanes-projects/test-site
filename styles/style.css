@@ -773,6 +773,32 @@ Ex.:
 		- O elemento com position sticky vai ficar aparecendo na rolagem da página, até que passe para o próximo elemento sticky.
 		
 
+- Media queries e breakpoints:
+	- Media-queries: estrutura do CSS que permite aplicar determinados estilos de acordo com condições setadas.
+		- Permite que sejam sobrescritos estilos no CSS.
+		- Pode ser usada para definir como um conteúdo será apresentado, a depender do tamanho da tela do usuário.
+		- São definidos breakpoints a partir dos quais a regra do CSS a ser seguida vai mudar.
+
+
+		- Como definir:
+			@media (max-width: 320px) {
+				.formulario {
+					width: 500px;
+				}
+
+
+			}
+			- Podem também ser usados operadores lógicos: not, and, only, e também pode ser usado o "or".
+			Ex.:
+			@media (min-width: 321px) and (max-width: 768px) {
+
+			}
+		
+
+		- Mobile-first ou desktop-first: 
+			- Geralmente os sites são feitos para mobile, no CSS, sendo utilizadas as media-queries para que possa ser acessado via desktop.
+
+	
 
 		
 		
@@ -793,18 +819,16 @@ div {
 	color: initial;
 }
 
-.test-1 {
+/* .test-1 {
 	display: block;
 	background-color: #bd5734;
 	opacity: 0.5;
 	box-sizing: border-box;
 	width: 50rem;
-	/* height: 88rem; */
 	height: 30rem;
 	margin: 0 auto 50px auto;
 	padding: 80px;
 	position: absolute;
-	/* top: 432.5vh; */
 	top: 510vh;
 	left: 10rem;
 	right: 10rem;
@@ -821,4 +845,14 @@ div {
 	padding: 80px;
 	margin: 50px auto;
 	z-index: -2;
+} */
+
+@media (max-width: 768px) {
+	.conteúdo-página {
+		width: 100vw;
+	}
+
+	.formulario {
+		width: 50vw;
+	}
 }
