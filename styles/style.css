@@ -10,6 +10,8 @@ html {
 	height: 100%;
 	display: flex;
 	/* width: 100%; */
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 body {
@@ -22,7 +24,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: right;
-	width: 100%;
+	width: 100vw;
 }
 
 .conteúdo-página {
@@ -30,51 +32,43 @@ body {
 	padding: 0rem 5rem;
 	/* margin-bottom: 40px; */
 	min-height: 100vh;
-	width: 100%;
+	width: 100vw;
 }
 
 .logo {
-	display: flex;
-	height: 80px;
-	padding-left: 20px;
+	width: 7vw;
+	background-color: #f00;
+	height: 10vh;
 }
 
 #imagem-logo {
-	height: 100%;
-	width: 120px;
-}
-
-.header {
-	display: flex;
-	width: 100%;
-	background-color: #000000;
-	justify-content: space-around;
-	align-items: center;
-	padding-left: 20px;
+	height: 10vh;
+	width: 7vw;
+	padding: 0;
 	margin: 0;
 }
 
-#menu-nav {
-	width: 100%;
-	height: max-content;
+header {
+	width: 100vw;
+	gap: 5rem;
+	background-color: black;
+	margin: 0;
 }
 
-#botoes-menu {
-	list-style: none;
+.topnav {
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: space-around;
+	width: 100%;
 }
 
-/* #menu li a {
-	display: flex;
-	height: 50px;
+#menu-nav {
 	cursor: pointer;
-	padding: 10px 60px;
-	text-transform: uppercase;} */
+	font-size: 2rem;
+	list-style: none;
+}
 
 #menu-nav li a:hover {
-	/* text-decoration: underline solid white; */
 	color: #bd5734;
 	/* background-color: rgba(0, 0, 0, 0.2); */
 }
@@ -92,7 +86,8 @@ body {
 	font-family: "Open Sans", serif;
 	font-weight: bold;
 	height: 40px;
-	width: 100px;
+	width: 7vw;
+	color: #bd5734;
 }
 
 #login-button:hover {
@@ -133,6 +128,8 @@ body {
 	justify-content: center;
 	align-items: center;
 	margin-top: 50px;
+
+	width: 100vw;
 }
 
 .banner h1 {
@@ -223,7 +220,8 @@ header + p {
 	/* margin: 0 auto; */
 	display: flex;
 	justify-content: center;
-	margin: 50px 0px 50px 20px;
+	margin: 0 auto;
+	width: 60vw;
 }
 
 iframe {
@@ -233,7 +231,7 @@ iframe {
 .table {
 	border-collapse: collapse; /* Junta as bordas da tabela*/
 	font-family: sans-serif;
-	width: 80vw;
+	width: 40vw;
 	height: 40vh;
 	padding: 0;
 	margin: 50px auto;
@@ -270,23 +268,21 @@ tfoot {
 	height: 5vh;
 }
 
+footer {
+	width: 100vw;
+	margin: 0;
+}
+
 #footer {
 	background-color: black;
 	list-style: none;
-	gap: 0rem;
-	padding-right: 1rem;
+	padding: 1rem;
 	display: flex;
 	justify-content: right;
 	flex-direction: column;
-	/* display: flex;
-	justify-content: right;
-	flex-direction: column;
-	margin: 0;
-	width: 100%; */
-	/* bottom: 0; */
+	width: 100%;
 }
 #footer li a {
-	display: block;
 	font-size: 1.5rem;
 	text-decoration: none;
 	color: white;
@@ -294,11 +290,9 @@ tfoot {
 	cursor: pointer;
 	text-align: right;
 }
-/* COmo resolver o posicionamento do footer??*/
 
 #footer li a:hover {
 	color: #bd5734;
-	/* text-decoration: underline solid white; */
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -330,8 +324,9 @@ label {
 	display: block;
 	margin: 10px 0px;
 	font-weight: bold;
-	width: max-content;
+	width: 40vw;
 	font-size: 18px;
+	line-height: 2rem;
 
 	/* border: 1px solid black; */
 }
@@ -343,6 +338,7 @@ textarea {
 	margin: 0.5rem 0px;
 	border: 0.05rem solid black;
 	transition: all 300ms ease-in-out;
+	max-width: 40vw;
 }
 
 input:focus:not(.IELTS-input),
@@ -371,7 +367,7 @@ textarea:focus {
 
 .formulario {
 	background-color: #a79e846c;
-	max-width: 50rem;
+	width: 50vw;
 	margin: 5rem auto;
 	padding: 2rem;
 	border: 0.2rem solid #bd5734;
@@ -379,16 +375,16 @@ textarea:focus {
 
 .IELTS {
 	display: flex;
-	gap: 10px;
 	margin: 0;
-	width: max-content;
+	width: 10vw;
+	gap: 0rem;
 }
 
 .IELTS-input {
 	border-radius: 50%;
 	background-color: white;
 	appearance: none;
-	width: 15px;
+	width: 1.5rem;
 	height: 15px;
 }
 
@@ -413,13 +409,13 @@ textarea:focus {
 	height: 8rem;
 	padding-left: 2rem;
 	background-color: black;
-	width: 100%;
+	width: 100vw;
 }
 
 .login,
 .registre-se {
 	background-color: rgba(0, 0, 0, 0.2);
-	width: 50%;
+	width: 50vw;
 	margin: 0 auto;
 }
 
@@ -462,362 +458,109 @@ p:not(:first-child) {
 	text-indent: 3rem;
 }
 
-/* 
-- Seletores básicos CSS:
-
-	- Seletor de descendentes:
-
-		- Pode ser selecionada um elemento específico que pertence a determinada classe:
-			- Ex.:	h1.menu-login {} - Nesse caso, apenas o elemento h1 da aclasse "menu-login" será selecionado.
-				HTML:
-				<body>
-					<div class="menu">
-						<h1 class="menu-login">Faça login!</h1>
-						<p class="menu-login">Não é cadastrado?Cadastre-se agora!</p>
-					</div>
- 			- Nesse caso, apenas o elemento h1 da aclasse "menu-login" será selecionado.
-
-		- Herança de estilos em DIVs:
-			- A configuração padrão do navegador determina que div's filhas herdam a cor da div pai.
-				- color: inherit;
-				- Isso pode ser alterado no CSS, basta definir o estilo color: initial;
-			- Os filhos herdam
-		
-		.menus.menu-login {}
-			- Irá selecionar elementos que tenham essas duas classes, concomitantement, "menus" e "menu-login"
-
-		.menus .menu-login {}
-			- Irá selecionar elementos da classe "menu-login" que sejam filhas do elemento de classe "menu".
-		
-		- Child selector:
-			- Seletor direto de filhos específicos de um elemento. 
-			- Usado para selecionar apenas alguns dos filhos, e não todos.
-			Ex.:
-			HTML:
-			<div class="lista-1">
-		
-				<div class="item">
-					ITEM 1
-					<div class="explicacao">Explicacao</div>
-				</div>
-
-			<div class="item">
-				ITEM 2
-				<div class="explicacao">Explicacao</div>
-				</div>
-			</div>
-
-			CSS:
-			div {
-			color: initial;
-			}
-
-			.lista-1 > .item {
-			color: red;
-			}
-
-			- Nesse caso, apenas os elementos de classe "item" ficarão vermelhos.
-
-	- Seletores de irmãos:
-			- Adjacent sibling combinator:
-				.introdução h1+p {}
-				- Seleciona todos os <p> irmãos que são filhos de h1
-			
-			- General sibling selector:
-				.introdução h1~p {}
-				- Seleciona todos os elementos irmãos que vem depois de h1
-			
-
-	- Seletor de atributos:
-			[src] {}
-			- Pode ser selecionado apenas o atributo, e aí todos os atributos do HTML serão selecionados.
-			
-			[src=".test-site/images/imagem.png"] {}
-			- Pode ser selecionado o atributo e o seu valor. Nesse caso, o estilo só será aplicado caso o valor seja aquele em específico.
-				- Interessante quando se utiliza js para manipular a página.
-
-			[meu-atributo~="valor1"] {}
-			- Seleciona o atributo apenas para um valor específico que ele tenha, no caso de o atributo ter vários valores possíveis.
-				HTML
-				<h1 meu-atributo="valor1 valor2 valor3">
-
-			[meu-atributo|="valor1"] {}
-			- Seleciona apenas o primeiro atributo e que seja seguidos de -
-
-			[meu-atributo^="foto"] {}
-			- Seleciona atributos quando o valor começa com "foto"
-
-			[meu-atributo$="foto"] {}
-			- Seleciona atributos quando o valor termina com "foto".
-
-			[meu-atributo*="as"] {}
-			- Seleciona atributos quando o valor contém "as"
-
-
-	- Pseudoclasses: permitem a estilização de um elemento de acordo com o seu estado.
-		
-		- Transition: all 10ms ease-in
-				- Define como ocorrerão as transcições entre estados.
-
-		- Pseudoclasses para links:
-			seletor:link {}
-				- Aplica um estilo, caso o link ainda não tenha sido aberto.
-
-			seletor:visited {}
-				- Aplica um estilo, caso o link já tenha sido aberto.
-			
-			seletor:active {}
-				- Aplica um estilo apenas durante a seleção do link
-
-		
-		seletor:hover {}
-		- Aplica estilo ao passar o mouse sobre o elemento.
-
-		seletor:focus {}
-		- Aplica estilo quando o elemento estiver selecionado
-		- Bastante utilizado para inputs.
-		- Inputs já vem com um outline padrão preto.
-		
-		seletor:first-child
-
-		seletor:last-child
-
-		seletor:required
-
-		seletor:not()
-		- Seleciona um elemento, exceto algum outro, que pode ser referenciado pela classe, ID ou tag.
-		Ex.:
-		input:hover:not(.inputName) {
-			background-color: red;
-
-
-		seletor:nth-child(even / odd / 5 / 3n / 3n+5)
-		- Seleciona um ou vários elementos irmãos específicos.
-		- Even: par
-		- Odd: ímpar
-		- índice específico: selecionar pelo numeral do índice do irmão.
-		- 3n/4n: seleciona de 3 em 3/4 em 4
-		- 3n+5: seleciona de 3 em 3 a partir do 5º elemento
-		
-	
-	- Pseudoelementos: permite a estilização de uma parte específica de um elemnto.
-		- seletor::before
-			- Pseudoelemento irá aparecer dentro do elemento selecionado, antes do seu conteúdo.
-		- seletor::after
-			- Pseudoelemento irá aparecer dentro do elemento selecionado, depois do seu conteúdo.
-		- seletor::first-line
-		- seletor::first-letter
-		- seletor::placeholder
-
-
-
-- Especificidade no CSS:
-	- ID, classes, atributos e pseudo-classes, elementos e pseudo-elementos
-	- Sempre a regra com a maior especificidade é aplicada, indepentemente da ordem em que foi escrita no css.
-	- Para regras de mesma especificidade, será aplicada a que foi escrita por último.
-	- Quantos mais seletores forem sendo adicionados, maior a especificidade, no geral. 
-		- Tem que ser verificado o resultado, para ver qual regra será aplicada.
-	- Atributo style é a que regra que tem maior especificidade (utilizada no próprio html).
-	- !important: se for escrita na frente da regra do css, ela será aplicada, independentemente da especificidade.
-
-
-OBS.: pode ser definida regra para seletor que tenha #ID & .classe ao mesmo tempo. Nesse caso, a especificidade é maior que apenas o ID.
-Ex.:
-	html
-		...
-		<section class="introdução"> 
-		<h1 class="introdução" id="titulo"> Como começa: </h1>
-		
-		</section>
-
-		#titulo {
-			background-color: red;
-		}
-
-		#titulo.introdução {
-			background-color: blue;
-		}
-	- Nesse caso, o background blue será aplicado, pois a especificidade é (1,1,0) -> 110
-	
-
-- Herança de propriedades:
-	- Algumas propriedades são passadas de pai para filho.
-	- Color, font-family, font-size, font-style... há uma lista das principais propriedades herdadas.
-	- Para desativar a herança e configurações padrões do navegador: definir a propriedade com o valor "initial".
-		Ex.: font-size: initial
-
-
-
-- Propriedades box-model:
-	- Elementos com display block podem ter altura e largura definidas, enquanto que
-	elementos com display inline, não pegam altura e largura.
-	Ex.: tag <p> tem o display padrão inline, enquanto <div> tem display block.
-	- Width
-		- Max-width
-		- Min-width
-	- Height
-		- Max-height
-		- Min-width
-	- Overflow: propriedade que define o que acontecerá quando o content exceder a altura ou largura da box em que está contido.
-	- Box-sizing: border-box
-		- O tamanho do box irá incluir seu conteúdo, com altura, largura, altura e largura do padding e da borda.
-		- Margem não é incluída, sempre fica fora.
-	- Float: pode ser definida uma forma de organização horizontal para os boxes
-	OBS.: Margens e paddings de elementos em block (elementos de separação de conteúdo, por padrão), não são somadas, exceto se estiverem em float.
-
-
-
-- Cores HTML: (color picker)
-	- Hexadecimal: ABCDEF12345678 (3 ou 6 letras - se os pares forem repetidos, pode ser colocada apenas 1 letra para cada par)
-		- 1º par de letras= vermelho
-		- 2º par de letras= verde
-		- 3º par de letras= azul
-
-	- RGB: 3 centenas
-		- Red, green e blue
-
-	- RGBA: 4 valores (R, G, B, Opacidade)
-
-	- HSL e HSLA
-
-
-- Unidades de medida:
-	- Unidades absolutas: px
-		- Não tem como o usuário alterar o tamanho da fonte utilizando as configurações do navegador, por exemplo.
-
-	- Unidades relativas: dependem de outra medida
-		- É interessante utilizar porque permite que o usuário altere o tamanho da visualização da página, e todos os elementos em medidas relativas, se ajustam.
-		
-		- em (0-10): elemento se comporta com base nas medidas do elemento PAI (mais próximo)
-			- 1em = 100% do tamanho do pai
-			- 0.5em = 50% do tamanho do pai
-
-		- rem: elemento se comporta com base no elemento root do documento (html)
-			- É mais utilizado atualmente
-		
-		- Como utilizar rem para equivaler a um valor específico de pixels:
-			- Definir font-size do html: 62.5% (o navegador já define por padrão o font-size em 16px, caso o font-size do html seja 100%).
-				- 62,5% de 16px, equivale a 10px. Então, o font-size do html passa a ser de 10px, e medidas seguintes de 1rem também.
-
-		- vw: 1% da largura do viewport - área visível do navegador, em uma tela (0-100)
-			- O viewport muda de acordo com o tamanho da janela.
-		
-		- vh: 1% da altura do viewport
-			- Bastante utilizado. 
-			- Ex.: landing-page, em que cada sessão corresponde a 100vh, pegando a tela inteira.
-		
-		OBS.: links âncoras direcionam para ID's do website.
-
-		- porcentagem: comprimento e largura em relação ao elemento pai
-
-		- vmin: 1% relativa à menor dimensão do viewport
-			- Varia conforme o redimensionamento da janela
-		
-		- vmax: 1% relativa à maior dimensão do viewport
-			- Varia conforme o redimensionamento da janela
-
-
-- Propriedades para textos:
-	- font-size
-	- font-style
-	- font-weight: 300, 400 (normal), 700 (bold), ou bold
-	- direction: ltr (left to right); rtl (right to left)
-	- letter-spacing
-	- word-spacing
-	- line-height
-	- text-align: alinhamento do texto (center, right, left)
-	- text-decoration: overline, underline, line-through
-	- text-indent
-	- text-shadow: esquerda-direita, cima-baixo, blur(esfumaçado), cor
-		Ex.: text-shadow: 1rem 1rem 1rem red;
-			- Sombra da direta para a esquerda ou de baixo para cima: usar valores negativos para as medidas de dispersão.
-	- text-transform: lowercase, uppercase, capitalize (primeira letra maiúscula)
-
-
-- Posicionamento dos elementos:
-	- Para alterar manualmente a posição dos elementos:
-
-	- position: static; (padrão) - não é possível setar top, left, bottom e right, e os elementos não se sobrepõem.
-	
-	- position: absolute
-			- O elemento ficará posicionado no ponto definido independentemente de outros, podendo se sobrepor.
-			- Outros elementos não irão mudar de posição por conta desse elemento absolute.
-				- Os elementos ignoram a posição do elemento com position absolute.
-			- Muda o flow da página.
-			-
-
-		- Posicionando o elemento: as distâncias são definidas de acordo com o tamanho do viewport, ignorando outros elementos.
-			- top, right, left, bottom
-				- em pixels, rem, porcentagem
-			- Centralizar elementos:
-				- Dá para usar margin-top, left, right, bottom negativos
-			- z-index: - ou +
-
-	
-	- position: relative;
-		- Permite que seja definido top, left, right e bottom para um elemento (as distâncias deles em cada uma dessas direções).
-		- Permite a sobreposição de elementos, mas outros elementos ainda "respeitam" o espaço do elemento relative.
-
-		- Posicionamento o elemento: as distâncias são definidas de acordo com a posição dos outros elementos próximos.
-			- Colocar um elemento com position absolute dentro de outro com position relative:
-				- Ele irá se posicionar dentro do elemento com position relative, e não de acordo com o viewport.
-	
-	- position: fixed;
-		- Mesmas características do position absolute, podendo ser definido top, bottom, left, right.
-			- Diferença do absolute: o elemento sempre irá ocupar a posição especificada, mesmo com a rolagem da página.
-		- Usado em botões de voltar ao topo, ou botões de contato por whatsapp, por exemplo.
-
-	
-	- position: sticky;
-		- Usado para elementos com overflow.
-		- O elemento com position sticky vai ficar aparecendo na rolagem da página, até que passe para o próximo elemento sticky.
-		
-
-- Media queries e breakpoints:
-	- Media-queries: estrutura do CSS que permite aplicar determinados estilos de acordo com condições setadas.
-		- Permite que sejam sobrescritos estilos no CSS.
-		- Pode ser usada para definir como um conteúdo será apresentado, a depender do tamanho da tela do usuário.
-		- São definidos breakpoints a partir dos quais a regra do CSS a ser seguida vai mudar.
-
-
-		- Como definir:
-			@media (max-width: 320px) {
-				.formulario {
-					width: 500px;
-				}
-
-
-			}
-			- Podem também ser usados operadores lógicos: not, and, only, e também pode ser usado o "or".
-			Ex.:
-			@media (min-width: 321px) and (max-width: 768px) {
-
-			}
-		
-
-		- Mobile-first ou desktop-first: 
-			- Geralmente os sites são feitos para mobile, no CSS, sendo utilizadas as media-queries para que possa ser acessado via desktop.
-
-	
-
-		
-		
-
-
-
-	
-
-
-	
-		
-		
-
-
-*/
-
-div {
-	color: initial;
+@media (max-width: 568px) {
+	.topnav {
+		display: flex;
+		flex-direction: column;
+		justify-content: right;
+	}
 }
+
+/* - Seletores básicos CSS: - Seletor de descendentes: - Pode ser selecionada um elemento específico que pertence a determinada classe: - Ex.: h1.menu-login,
+	apenas o elemento h1 da aclasse "menu-login" será selecionado. HTML: <body> <div class="menu"> <h1 class="menu-login">Faça login!</h1> <p class="menu-login">Não é cadastrado?Cadastre-se agora!</p> </div> - Nesse caso,
+	apenas o elemento h1 da aclasse "menu-login" será selecionado. - Herança de estilos em DIVs: - A configuração padrão do navegador determina que div's filhas herdam a cor da div pai. - color: inherit; - Isso pode ser alterado no CSS,
+	basta definir o estilo color: initial; - Os filhos herdam .menus.menu-login,
+	concomitantement,
+	"menus" e "menu-login" .menus .menu-login,
+	e não todos. Ex.: HTML: <div class="lista-1"> <div class="item"> ITEM 1 <div class="explicacao">Explicacao</div> </div> <div class="item"> ITEM 2 <div class="explicacao">Explicacao</div> </div> </div> CSS: div { color: initial; } .lista-1 > .item { color: red; } - Nesse caso,
+	apenas os elementos de classe "item" ficarão vermelhos. - Seletores de irmãos: - Adjacent sibling combinator: .introdução h1+p,
+	e aí todos os atributos do HTML serão selecionados. [src=".test-site/images/imagem.png"],
+	o estilo só será aplicado caso o valor seja aquele em específico. - Interessante quando se utiliza js para manipular a página. [meu-atributo~="valor1"],
+	no caso de o atributo ter vários valores possíveis. HTML <h1 meu-atributo="valor1 valor2 valor3"> [meu-atributo|="valor1"],
+	caso o link ainda não tenha sido aberto. seletor:visited,
+	caso o link já tenha sido aberto. seletor:active,
+	exceto algum outro,
+	que pode ser referenciado pela classe,
+	ID ou tag. Ex.: input:hover:not(.inputName) { background-color: red; seletor:nth-child(even / odd / 5 / 3n / 3n+5) - Seleciona um ou vários elementos irmãos específicos. - Even: par - Odd: ímpar - índice específico: selecionar pelo numeral do índice do irmão. - 3n/4n: seleciona de 3 em 3/4 em 4 - 3n+5: seleciona de 3 em 3 a partir do 5º elemento - Pseudoelementos: permite a estilização de uma parte específica de um elemnto. - seletor::before - Pseudoelemento irá aparecer dentro do elemento selecionado,
+	antes do seu conteúdo. - seletor::after - Pseudoelemento irá aparecer dentro do elemento selecionado,
+	depois do seu conteúdo. - seletor::first-line - seletor::first-letter - seletor::placeholder - Especificidade no CSS: - ID,
+	classes,
+	atributos e pseudo-classes,
+	elementos e pseudo-elementos - Sempre a regra com a maior especificidade é aplicada,
+	indepentemente da ordem em que foi escrita no css. - Para regras de mesma especificidade,
+	será aplicada a que foi escrita por último. - Quantos mais seletores forem sendo adicionados,
+	maior a especificidade,
+	no geral. - Tem que ser verificado o resultado,
+	para ver qual regra será aplicada. - Atributo style é a que regra que tem maior especificidade (utilizada no próprio html) . - !important: se for escrita na frente da regra do css,
+	ela será aplicada,
+	independentemente da especificidade. OBS.: pode ser definida regra para seletor que tenha #ID & .classe ao mesmo tempo. Nesse caso,
+	a especificidade é maior que apenas o ID. Ex.: html ... <section class="introdução"> <h1 class="introdução" id="titulo"> Como começa: </h1> </section> #titulo { background-color: red; } #titulo.introdução { background-color: blue; } - Nesse caso,
+	o background blue será aplicado,
+	pois a especificidade é (1,1,0) -> 110 - Herança de propriedades: - Algumas propriedades são passadas de pai para filho. - Color,
+	font-family,
+	font-size,
+	font-style... há uma lista das principais propriedades herdadas. - Para desativar a herança e configurações padrões do navegador: definir a propriedade com o valor "initial". Ex.: font-size: initial - Propriedades box-model: - Elementos com display block podem ter altura e largura definidas,
+	enquanto que elementos com display inline,
+	não pegam altura e largura. Ex.: tag <p> tem o display padrão inline,
+	enquanto <div> tem display block. - Width - Max-width - Min-width - Height - Max-height - Min-width - Overflow: propriedade que define o que acontecerá quando o content exceder a altura ou largura da box em que está contido. - Box-sizing: border-box - O tamanho do box irá incluir seu conteúdo,
+	com altura,
+	largura,
+	altura e largura do padding e da borda. - Margem não é incluída,
+	sempre fica fora. - Float: pode ser definida uma forma de organização horizontal para os boxes OBS.: Margens e paddings de elementos em block (elementos de separação de conteúdo, por padrão),
+	não são somadas,
+	exceto se estiverem em float. - Cores HTML: (color picker) - Hexadecimal: ABCDEF12345678 (3 ou 6 letras - se os pares forem repetidos, pode ser colocada apenas 1 letra para cada par) - 1º par de letras= vermelho - 2º par de letras= verde - 3º par de letras= azul - RGB: 3 centenas - Red,
+	green e blue - RGBA: 4 valores (r, g, b, opacidade) - HSL e HSLA - Unidades de medida: - Unidades absolutas: px - Não tem como o usuário alterar o tamanho da fonte utilizando as configurações do navegador,
+	por exemplo. - Unidades relativas: dependem de outra medida - É interessante utilizar porque permite que o usuário altere o tamanho da visualização da página,
+	e todos os elementos em medidas relativas,
+	se ajustam. - em (0-10) : elemento se comporta com base nas medidas do elemento PAI (mais próximo) - 1em = 100% do tamanho do pai - 0.5em = 50% do tamanho do pai - rem: elemento se comporta com base no elemento root do documento (html) - É mais utilizado atualmente - Como utilizar rem para equivaler a um valor específico de pixels: - Definir font-size do html: 62.5% (o navegador já define por padrão o font-size em 16px, caso o font-size do html seja 100%) . - 62,
+	5% de 16px,
+	equivale a 10px. Então,
+	o font-size do html passa a ser de 10px,
+	e medidas seguintes de 1rem também. - vw: 1% da largura do viewport - área visível do navegador,
+	em uma tela (0-100) - O viewport muda de acordo com o tamanho da janela. - vh: 1% da altura do viewport - Bastante utilizado. - Ex.: landing-page,
+	em que cada sessão corresponde a 100vh,
+	pegando a tela inteira. OBS.: links âncoras direcionam para ID's do website. - porcentagem: comprimento e largura em relação ao elemento pai - vmin: 1% relativa à menor dimensão do viewport - Varia conforme o redimensionamento da janela - vmax: 1% relativa à maior dimensão do viewport - Varia conforme o redimensionamento da janela - Propriedades para textos: - font-size - font-style - font-weight: 300,
+	400 (normal),
+	700 (bold),
+	ou bold - direction: ltr (left to right) ; rtl (right to left) - letter-spacing - word-spacing - line-height - text-align: alinhamento do texto (center, right, left) - text-decoration: overline,
+	underline,
+	line-through - text-indent - text-shadow: esquerda-direita,
+	cima-baixo,
+	blur(esfumaçado),
+	cor Ex.: text-shadow: 1rem 1rem 1rem red; - Sombra da direta para a esquerda ou de baixo para cima: usar valores negativos para as medidas de dispersão. - text-transform: lowercase,
+	uppercase,
+	capitalize (primeira letra maiúscula) - Posicionamento dos elementos: - Para alterar manualmente a posição dos elementos: - position: static; (padrão) - não é possível setar top,
+	left,
+	bottom e right,
+	e os elementos não se sobrepõem. - position: absolute - O elemento ficará posicionado no ponto definido independentemente de outros,
+	podendo se sobrepor. - Outros elementos não irão mudar de posição por conta desse elemento absolute. - Os elementos ignoram a posição do elemento com position absolute. - Muda o flow da página. - - Posicionando o elemento: as distâncias são definidas de acordo com o tamanho do viewport,
+	ignorando outros elementos. - top,
+	right,
+	left,
+	bottom - em pixels,
+	rem,
+	porcentagem - Centralizar elementos: - Dá para usar margin-top,
+	left,
+	right,
+	bottom negativos - z-index: - ou + - position: relative; - Permite que seja definido top,
+	left,
+	right e bottom para um elemento (as distâncias deles em cada uma dessas direções) . - Permite a sobreposição de elementos,
+	mas outros elementos ainda "respeitam" o espaço do elemento relative. - Posicionamento o elemento: as distâncias são definidas de acordo com a posição dos outros elementos próximos. - Colocar um elemento com position absolute dentro de outro com position relative: - Ele irá se posicionar dentro do elemento com position relative,
+	e não de acordo com o viewport. - position: fixed; - Mesmas características do position absolute,
+	podendo ser definido top,
+	bottom,
+	left,
+	right. - Diferença do absolute: o elemento sempre irá ocupar a posição especificada,
+	mesmo com a rolagem da página. - Usado em botões de voltar ao topo,
+	ou botões de contato por whatsapp,
+	por exemplo. - position: sticky; - Usado para elementos com overflow. - O elemento com position sticky vai ficar aparecendo na rolagem da página,
+	até que passe para o próximo elemento sticky. - Media queries e breakpoints: - Media-queries: estrutura do CSS que permite aplicar determinados estilos de acordo com condições setadas. - Permite que sejam sobrescritos estilos no CSS. - Pode ser usada para definir como um conteúdo será apresentado,
+	a depender do tamanho da tela do usuário. - São definidos breakpoints a partir dos quais a regra do CSS a ser seguida vai mudar. - Como definir: @media (max-width: 320px) { .formulario { width: 500px; } } - Podem também ser usados operadores lógicos: not,
+	and,
+	only,
+	e também pode ser usado o "or". Ex.: @media (min-width: 321px) and (max-width: 768px) { } - Mobile-first ou desktop-first: - Geralmente os sites são feitos para mobile,
+	no CSS,
+	sendo utilizadas as media-queries para que possa ser acessado via desktop. */
 
 /* .test-1 {
 	display: block;
@@ -847,7 +590,7 @@ div {
 	z-index: -2;
 } */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 	.conteúdo-página {
 		width: 100vw;
 	}
@@ -855,4 +598,4 @@ div {
 	.formulario {
 		width: 50vw;
 	}
-}
+} */

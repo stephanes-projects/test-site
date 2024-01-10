@@ -21,40 +21,35 @@
 	</head>
 
 	<body>
-		<header class="header">
-			<div class="logo">
-				<a class="botoes-menu-sup" href="./home.html">
-					<img id="imagem-logo" src="images/letter.jfif" />
-				</a>
-			</div>
-			<nav id="menu-nav">
-				<ul id="botoes-menu">
-					<li>
-						<a class="botoes-menu-sup" id="inicio" href="./home.html">Início</a>
-					</li>
-					<li>
-						<a class="botoes-menu-sup" id="cursos" href="./cursos.html"
-							>Cursos</a
-						>
-					</li>
-					<li>
-						<a class="botoes-menu-sup" id="sobre" href="./sobre.html">Sobre</a>
-					</li>
-					<li>
-						<a
-							class="botoes-menu-sup"
-							id="fale-conosco"
-							href="./faleconosco.html"
-							>Fale conosco</a
-						>
-					</li>
+		<header>
+			<ul class="topnav" id="menu-nav">
+				<div class="logo">
+					<a class="botoes-menu-sup" id="logo" href="./home.html">
+						<img id="imagem-logo" src="images/letter.jfif" />
+					</a>
+				</div>
+				<li>
+					<a class="botoes-menu-sup" id="inicio" href="./home.html">Início</a>
+				</li>
+				<li>
+					<a class="botoes-menu-sup" id="cursos" href="./cursos.html">Cursos</a>
+				</li>
+				<li>
+					<a class="botoes-menu-sup" id="sobre" href="./sobre.html">Sobre</a>
+				</li>
+				<li>
+					<a class="botoes-menu-sup" id="fale-conosco" href="./faleconosco.html"
+						>Fale conosco</a
+					>
+				</li>
+				<li>
 					<div class="menu-button">
 						<form action="login.html">
 							<button id="login-button" type="submit">Entrar</button>
 						</form>
 					</div>
-				</ul>
-			</nav>
+				</li>
+			</ul>
 		</header>
 
 		<main>
@@ -313,17 +308,16 @@
 						Preencha esse formulário para receber o contato de um de nossos
 						consultores!
 					</p>
-					<div class="nome-div">
-						<label for="nome" class="label-nome">Nome:</label>
-						<input
-							type="text"
-							id="nome"
-							name="nome"
-							placeholder="Seu nome"
-							onfocus="mudarBorda()"
-							required
-						/>
-					</div>
+
+					<label for="nome" class="label-nome">Nome:</label>
+					<input
+						type="text"
+						id="nome"
+						name="nome"
+						placeholder="Seu nome"
+						onfocus="mudarBorda()"
+						required
+					/>
 
 					<label for="idade">Sua idade:</label>
 					<input
@@ -345,7 +339,7 @@
 						required
 					/>
 
-					<label>Já tenho IELT's:</label>
+					<label id="IELTS-label">Já tenho IELT's:</label>
 					<div class="IELTS">
 						<label>
 							<input
@@ -442,7 +436,7 @@
 			</section>
 		</div>
 
-		<div class="test-1">
+		<!-- <div class="test-1">
 			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa qui,
 			cupiditate accusantium error sed rerum? Dolor eligendi similique quisquam?
 			Cupiditate architecto quaerat deserunt accusamus magni? Illum placeat
@@ -454,11 +448,11 @@
 			cupiditate accusantium error sed rerum? Dolor eligendi similique quisquam?
 			Cupiditate architecto quaerat deserunt accusamus magni? Illum placeat
 			eligendi at tempora.
-		</div>
+		</div> -->
 
 		<footer>
-			<nav>
-				<ul id="footer">
+			<nav id="footer">
+				<ul>
 					<li>
 						<a class="link-footer" id="inicio-footer" href="./home.html"
 							>Início</a
