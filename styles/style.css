@@ -60,15 +60,12 @@ header {
 	align-items: center;
 	justify-content: space-around;
 	width: 100%;
-}
-
-#menu-nav {
 	cursor: pointer;
 	font-size: 2rem;
 	list-style: none;
 }
 
-#menu-nav li a:hover {
+.topnav a:hover {
 	color: #bd5734;
 	/* background-color: rgba(0, 0, 0, 0.2); */
 }
@@ -95,28 +92,8 @@ header {
 	cursor: pointer;
 }
 
-#inicio {
-	text-decoration: none;
-	color: white;
-	font-size: 2.5rem;
-	font-weight: bold;
-}
-
-#cursos {
-	text-decoration: none;
-	color: white;
-	font-size: 2.5rem;
-	font-weight: bold;
-}
-
-#sobre {
-	text-decoration: none;
-	color: white;
-	font-size: 2.5rem;
-	font-weight: bold;
-}
-
-#fale-conosco {
+.botoes-menu-sup {
+	display: flex;
 	text-decoration: none;
 	color: white;
 	font-size: 2.5rem;
@@ -406,7 +383,7 @@ textarea:focus {
 .menu-login,
 .menu-registre-se {
 	display: flex;
-	height: 8rem;
+	height: 10vh;
 	padding-left: 2rem;
 	background-color: black;
 	width: 100vw;
