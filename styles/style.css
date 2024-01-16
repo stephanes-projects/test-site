@@ -10,8 +10,8 @@ html {
 	height: 100%;
 	display: flex;
 	/* width: 100%; */
-	overflow-x: hidden;
 	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 body {
@@ -36,16 +36,20 @@ body {
 }
 
 .logo {
-	width: 7vw;
+	display: flex;
+	align-items: center;
+	justify-content: right;
+	width: 50%;
 	background-color: #f00;
-	height: 10vh;
+	height: 20vh;
 }
 
 #imagem-logo {
-	height: 10vh;
-	width: 10vw;
+	height: 15vh;
+	width: 50%;
 	padding: 0;
 	margin: 0;
+	background-color: #a79e84;
 }
 
 header {
@@ -58,13 +62,22 @@ header {
 .topnav {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly; /* define a direção do eixo principal dos flex items*/
+	justify-content: space-around; /* define a direção do eixo principal dos flex items*/
 	align-items: center;
 	width: 100%;
+	flex-grow: 10;
 	cursor: pointer;
 	font-size: 2rem;
 	list-style: none;
 	height: fit-content;
+}
+
+.topnav li {
+	flex: 1 1 320px;
+}
+
+.topnav :nth-child(1) {
+	flex: 2 1 320px;
 }
 
 .topnav a:hover {
@@ -80,12 +93,15 @@ header {
 }
 
 #login-button {
+	display: flex;
+	align-items: center;
 	border-radius: 0.6rem;
 	background-color: white;
 	font-family: "Open Sans", serif;
 	font-weight: bold;
 	height: 40px;
-	width: 7vw;
+	padding: 2rem;
+	width: fit-content;
 	color: #bd5734;
 }
 
@@ -101,7 +117,6 @@ header {
 	color: white;
 	font-size: 2.5rem;
 	font-weight: bold;
-	width: 100%;
 }
 
 .banner {
@@ -256,13 +271,23 @@ footer {
 
 #footer {
 	background-color: black;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	padding-right: 2rem;
+	flex-wrap: wrap;
+}
+
+/* #footer {
+	background-color: black;
 	list-style: none;
 	padding: 1rem;
-	display: flex;
+	display: block;
 	justify-content: right;
 	flex-direction: column;
 	width: 100%;
-}
+} */
 #footer li a {
 	font-size: 1.5rem;
 	text-decoration: none;
@@ -442,13 +467,13 @@ p:not(:first-child) {
 	text-indent: 3rem;
 }
 
-@media (max-width: 568px) {
+/* @media (max-width: 568px) {
 	.topnav {
 		display: flex;
 		flex-direction: column;
 		justify-content: right;
 	}
-}
+} */
 
 /*
 - Border-radius (shortcut):
@@ -475,6 +500,33 @@ p:not(:first-child) {
 	- align-itens: alinha os itens no eixo perperdicular
 		- Baseline: alinhamento no baseline do texto (base dos textos ficará alinhado)
 	
+
+- Flex-wrap: para os flex items quebrem linha, quando a tela for muito pequena
+- Align-content: alinha o conteúdo
+
+- Display inline-flex
+- Flex-flow atalho: flex-direction flex-wrap
+	- row wrap, colum wrap;
+
+- Flex-grow:
+	- Define a width dos flex items de acordo com o espaço disponível na tela.
+	- Flex-grow: 1
+		- Espaço que sobrar será dividido para todos os elementos
+	- Pode-se usar nth-child (x) para definir proporções diferentes para elementos específicos.
+
+- Flex-basis: reserva uma width mínima para cada um dos flex items, antes de saber qual é o espaço livre total.
+- Flex-shrink: 
+	- 1: permite que os flex items diminuam, conforme a tela diminui
+	- 0: não permite que os flex items diminuam
+
+- Flex atalho: flex-grow flex-shrink flex basis
+	- Flex: 1 (grow) 0 (shrink) 320px (basis);
+
+- Align-self: alinhamento para um elemento em específico
+
+- Order: definição da ordem dos flex-items
+
+
 
 
 
