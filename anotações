@@ -461,6 +461,60 @@ Box model: a maioria dos elementos html são representados por boxes retangulare
 					
 					- Podem também ser usados operadores lógicos: not, and, only, e também pode ser usado o "or". Ex.: @media (min-width: 321px) and (max-width: 768px) { } - Mobile-first ou desktop-first: - Geralmente os sites são feitos para mobile, no CSS, sendo utilizadas as media-queries para que possa ser acessado via desktop. */
 				
+					- Border-radius (shortcut):
+					- Arredondar elementos
+				
+				
+				- Box-shadow: 1px (direita) 1 px (baixo) 5px (desfoque-blur) 5px (espalhamento do desfoque) blue (cor);
+					- Usar valores negativos para ir para esquerda e cima.
+					- inset: sombra para dentro dos elementos.
+				
+				
+				
+				- Flexbox:
+					- Flex container
+					- Flex items
+					- Eixos:
+						- main axis: eixo que vai na direção em que os flex items estão dispostos
+						- cross axis: eixo que corre perpendicularmente ao eixo em que os flex items estão dispostos
+					
+					- flex-direction: define qual será o eixo principal e perpendicular
+						- row, colum...
+					
+					- justify-content: alinha os itens no eixo principal
+					- align-itens: alinha os itens no eixo perperdicular
+						- Baseline: alinhamento no baseline do texto (base dos textos ficará alinhado)
+					
+				
+				- Flex-wrap: para os flex items quebrem linha, quando a tela for muito pequena
+				- Align-content: alinha o conteúdo
+				
+				- Display inline-flex
+				- Flex-flow atalho: flex-direction flex-wrap
+					- row wrap, colum wrap;
+				
+				- Flex-grow:
+					- Define a width dos flex items de acordo com o espaço disponível na tela.
+					- Flex-grow: 1
+						- Espaço que sobrar será dividido para todos os elementos
+					- Pode-se usar nth-child (x) para definir proporções diferentes para elementos específicos.
+				
+				- Flex-basis: reserva uma width mínima para cada um dos flex items, antes de saber qual é o espaço livre total.
+				- Flex-shrink: 
+					- 1: permite que os flex items diminuam, conforme a tela diminui
+					- 0: não permite que os flex items diminuam
+				
+				- Flex atalho: flex-grow flex-shrink flex basis
+					- Flex: 1 (grow) 0 (shrink) 320px (basis);
+				
+				- Align-self: alinhamento para um elemento em específico
+				
+				- Order: definição da ordem dos flex-items
+				
+				- Colocar elementos flex um dentro do outro:
+					- É possível montar um display complexos apenas colocando elementos flex um dentro do outro, usando divs, por exemplo.
+					- Cada um dos elementos flex pode ser configurado de maneira distinta, tendo diferentes main axis, por exemplo.
+				
 				
 				
 				

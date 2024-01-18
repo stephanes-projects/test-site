@@ -1,17 +1,18 @@
 * {
 	margin: 0;
 	padding: 0;
+	max-width: 1920px;
 	box-sizing: border-box;
+	flex-wrap: nowrap;
 }
 
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
 	height: 100%;
-	display: flex;
 	/* width: 100%; */
 	overflow-y: scroll;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 }
 
 body {
@@ -21,14 +22,11 @@ body {
 	background-color: white;
 	margin: 0;
 	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: right;
-	width: 100vw;
 }
 
 .conteúdo-página {
 	/* box-sizing: content-box; */
+	box-sizing: border-box;
 	padding: 0rem 5rem;
 	/* margin-bottom: 40px; */
 	min-height: 100vh;
@@ -53,18 +51,21 @@ body {
 }
 
 header {
-	width: 100vw;
-	gap: 5rem;
+	width: 100%;
+
+	/* gap: 5rem; */
 	background-color: black;
 	margin: 0;
+	box-sizing: border-box;
 }
 
 .topnav {
 	display: flex;
+	box-sizing: border-box;
 	flex-direction: row;
 	justify-content: space-around; /* define a direção do eixo principal dos flex items*/
 	align-items: center;
-	width: 100%;
+	/* width: 100%; */
 	flex-grow: 10;
 	cursor: pointer;
 	font-size: 2rem;
@@ -162,8 +163,11 @@ h1:hover:not(form h1, .banner h1) {
 	cursor: pointer;
 }
 
-#aplicação-tema {
-	margin: 40px 0px 40px 0;
+#aplicação-tema,
+#OLOP,
+#MLAT,
+#MLP {
+	padding: 40px 0px 40px 0;
 }
 
 .lista {
@@ -179,18 +183,6 @@ h1:hover:not(form h1, .banner h1) {
 
 .lista a:hover {
 	text-decoration: underline solid #bd5734;
-}
-
-#OLOP {
-	margin: 40px 0px 40px 0;
-}
-
-#MLAT {
-	margin: 40px 0px 40px 0;
-}
-
-#MLP {
-	margin: 40px 0px 40px 0;
 }
 
 p,
@@ -267,6 +259,8 @@ tfoot {
 footer {
 	width: 100vw;
 	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 #footer {
@@ -467,76 +461,104 @@ p:not(:first-child) {
 	text-indent: 3rem;
 }
 
-/* @media (max-width: 568px) {
+@media (max-width: 568px) {
 	.topnav {
 		display: flex;
 		flex-direction: column;
 		justify-content: right;
 	}
-} */
+}
 
 /*
-- Border-radius (shortcut):
-	- Arredondar elementos
-
-
-- Box-shadow: 1px (direita) 1 px (baixo) 5px (desfoque-blur) 5px (espalhamento do desfoque) blue (cor);
-	- Usar valores negativos para ir para esquerda e cima.
-	- inset: sombra para dentro dos elementos.
-
-
-
-- Flexbox:
-	- Flex container
-	- Flex items
-	- Eixos:
-		- main axis: eixo que vai na direção em que os flex items estão dispostos
-		- cross axis: eixo que corre perpendicularmente ao eixo em que os flex items estão dispostos
-	
-	- flex-direction: define qual será o eixo principal e perpendicular
-		- row, colum...
-	
-	- justify-content: alinha os itens no eixo principal
-	- align-itens: alinha os itens no eixo perperdicular
-		- Baseline: alinhamento no baseline do texto (base dos textos ficará alinhado)
-	
-
-- Flex-wrap: para os flex items quebrem linha, quando a tela for muito pequena
-- Align-content: alinha o conteúdo
-
-- Display inline-flex
-- Flex-flow atalho: flex-direction flex-wrap
-	- row wrap, colum wrap;
-
-- Flex-grow:
-	- Define a width dos flex items de acordo com o espaço disponível na tela.
-	- Flex-grow: 1
-		- Espaço que sobrar será dividido para todos os elementos
-	- Pode-se usar nth-child (x) para definir proporções diferentes para elementos específicos.
-
-- Flex-basis: reserva uma width mínima para cada um dos flex items, antes de saber qual é o espaço livre total.
-- Flex-shrink: 
-	- 1: permite que os flex items diminuam, conforme a tela diminui
-	- 0: não permite que os flex items diminuam
-
-- Flex atalho: flex-grow flex-shrink flex basis
-	- Flex: 1 (grow) 0 (shrink) 320px (basis);
-
-- Align-self: alinhamento para um elemento em específico
-
-- Order: definição da ordem dos flex-items
-
-- Colocar elementos flex um dentro do outro:
-	- É possível montar um display complexos apenas colocando elementos flex um dentro do outro, usando divs, por exemplo.
-	- Cada um dos elementos flex pode ser configurado de maneira distinta, tendo diferentes main axis, por exemplo.
-
 
 - Display grid:
-	- Próprio para fazer tabelas
+	- Próprio para fazer grades/tabelas
+	- grid-template-columns: 33% 33% 33%;
+		- Define o número de colunas e a width delas.
+		- Medida em fr (fragmento)
+			- A coluna irá ocupar fragmentos do espaço em branco restante.
+			Ex.: grid-template-columns: 60px 1fr 1fr;
+			Ex.: grid-template-columns: 1fr 1fr 1fr;
+
+		- Uso da função repeat: 
+			- Para criar várias colunas de forma mais rápida, já definindo a width de todas elas.
+			grid-template-columns: repeat(10, 1fr);
+				- Cria 10 colunas cuja divisão do espaço vazio é de 1fr para cada
+			grid-template-columns: repeat(10, 2fr, 1fr);
+				- A largura das colunas irá se alternar, primeiro 2fr e depois 1fr.
+
+
+	- gap: pode ser definido gap entre os elementos da grid
+		OBS.: o gap é somado à width e height, tanto no display flex quanto no display grid, levando ao surgimento de overflow, dependendo das unidades de largura e altura que foram utilizadas.
+
+
+	- Adaptação para dispositivos móveis/telas menores:
+		- Pode ser feita a adaptação da grid utilizando media-queries, ou na própria definição da grid-template-columns, utilizando o auto-fill e minmax.
+		- grid-template-columns: repeat (auto-fill, minmax(320px, 1fr)); ** normalmente grids são utilizadas dessa forma (a não ser em casos específicos)
+
+			- auto-fill: o número de colunas será definido automaticamente para seguir o minmax.
+			- minmax: define a width mínima e máxima de cada coluna.
+				- colocar como min algum breakpoint de dispositivos móveis, como 320px.
 
 
 
+	- grid-template-rows:
+		- Número de linhas por cada grid element
 
+	- Definir que um elemento ocupe mais de uma linha ou coluna:
+		- grid-column-start, grid-column-end, grid-row-start, grid-row-end:
+		.grid div:nth-child (5) {
+			grid-column-start: 1;
+			grid-column-end: 5;
+		}
+
+		- grid-row e grid-column: shorhand de row start/end e column start/end
+		-grid-row: span x;
+		-grid-column: span y;
+
+		
+	OBS.: há como dois elementos se sobreporem. Nesse caso, utilizar o z-index.
+
+
+	- Span em dispositivos mobile:
+		- Apenas o auto-fill e minmax não são suficientes para criar um design responsivo para grids quando se usa span de 2+ (pois a grid fica tentando fazer o span de 2+ colunas ou linhas, mesmo se a tela permitir apenas 1 coluna).
+			- Nesse caso, o número de colunas não é ajustado conforme definido, e ocorre o overflow.
+			- Nesse caso, pode-se usar media-queries.
+				@media (max-width: 768px) {
+				.grid div:nth-child(1) {
+				grid-column: span 1;
+				}
+				}
+
+	
+	- Linhas e colunas: possível ver no inspecionar elementos.
+		- Há sempre uma linha e coluna antes de iniciar e terminar cada elemento, então uma grid com 6 linhas de elemento, vai ter 7 linhas no total, pois há uma linha abaixo dos últimos elementos.
+		- É possível nomear essas linhas e colunas:
+				grid-template-columns: 
+					[um] 1fr
+					[dois] 1fr
+					[tres] 1fr
+					[quatro];
+		
+		- Pode-se utilizar os nomes definidos das linhas e colunas para definir grid-row e grid-column
+				.grid div:nth-child (5) {
+				grid-column: um / quatro;
+				grid-row: um / tres;
+				}
+
+		- Utilizar os números das linhas e das colunas para definir grid-row e grid-column: 
+				- grid-column: span 2 / span 3;
+
+
+	- grid-area: shorthand para definir start row, start column, end row e end column
+		grid-area: 1 / 1 / 4 / 3;
+
+	
+	- Gap em grids:
+		gap: 30px (linhas) 80px (colunas);
+			- Shortcut para definir o gap de linha e coluna.
+		row-gap
+		column-gap
 
 
 
@@ -587,12 +609,12 @@ p:not(:first-child) {
 
 .flex-filho {
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: row wrap;
 	background-color: aqua;
 	margin: 5rem;
 	padding: 5rem;
 	width: 100%;
-	height: 70rem;
+	height: fit-content;
 }
 
 .flex-neto {
@@ -606,4 +628,43 @@ p:not(:first-child) {
 	height: 5rem;
 	margin: 0.5rem;
 	background-color: aquamarine;
+}
+
+.grid {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	/* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
+	/* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
+	grid-template-columns:
+		[um] 1fr
+		[dois] 1fr
+		[tres] 1fr
+		[quatro];
+	grid-template-rows: repeat(2, 1fr);
+	gap: 30px;
+}
+
+.grid div {
+	background-color: #bd5734;
+	min-height: 100px;
+}
+
+/* .grid div:nth-child(2) {
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 1;
+	grid-row-end: 4;
+} */
+
+.grid div:nth-child(1) {
+	grid-row: span 2;
+	grid-column: um / quatro;
+	background-color: aqua;
+}
+
+@media (max-width: 768px) {
+	.grid div:nth-child(1) {
+		grid-column: span 1;
+	}
 }
